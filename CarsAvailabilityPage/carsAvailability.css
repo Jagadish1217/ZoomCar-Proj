@@ -56,7 +56,7 @@ body {
   margin-left: 18%;
 }
 #pickuppoint > p,
-#pickuppoint ~ div > p,
+#pickuppoint ~ div > div > p,
 #picktimedetails > div,
 #droptimedetails > div {
   font-weight: 600;
@@ -109,13 +109,15 @@ body {
   margin-top: 5%;
   float: left;
 }
-#pickuppoint ~ div > p + p {
+#pickuppoint ~ div > div > p + p {
   padding: 0;
-  margin-left: 12%;
+  margin-left: 4%;
+  float: left;
 }
-#pickuppoint ~ div > p {
+#pickuppoint ~ div > div > p {
   /* padding: 0; */
-  margin-left: 14%;
+  margin-left: 6%;
+  float: left;
 }
 #pickuppoint ~ div > span {
   margin-left: 3%;
@@ -437,3 +439,69 @@ body {
   border-radius: 2px;
   cursor: pointer;
 }
+.door-delivery-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left: 75%;
+  margin-top: -10%;
+  clear: both;
+}
+
+.door-delivery-toggle input {
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .toggle-slider {
+  background-color: #70ad4d;
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px #70ad4d;
+}
+
+input:checked + .toggle-slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.toggle-slider.round {
+  border-radius: 34px;
+}
+
+.toggle-slider.round:before {
+  border-radius: 50%;
+}
+/* #pickuppoint + div {
+  display: flex;
+  flex-direction: row; 
+}*/

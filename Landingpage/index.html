@@ -8,9 +8,13 @@
   <title>Zoom Car</title>
   <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
+  
+  <link rel="icon" href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+    type="image/x-icon">
 </head>
 
 <body>
+  
   <div id="h_page">
     <div id="home">
       <nav id="navbar">
@@ -18,7 +22,7 @@
           <a href="#"><img src="./img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
         </div>
         <ul id="nav_ul">
-          <li class="item"><a href="./offers/offers.html">OFFERS</a></li>
+          <li class="item"><a href="../OffersPage/Offers.html">OFFERS</a></li>
           <li class="item hov">
             <a href="#">SUBSCRIPTION</a>
             <div class="details" id="sub_det_item">
@@ -82,8 +86,9 @@
           <h1 class="firstline">DRIVE IN A SANITIZED ZOOMCAR</h1>
           <h3 class="subhead">
             Self Drive Car Rental in
-            <select name="city" id="city" onchange="checkCity()">
-              <option value="select">City</option>
+            <select name="city" id="city" onclick="checkCity()">
+              <option id="cityvalue" value="select">City</option>
+              <!-- <p id="cityvalue"></p> -->
               <!-- <option value="Bangalore">Bangalore</option>
               <option value="Chandigarh">Chandigarh</option>
               <option value="Hyderabad">Hyderabad</option>
@@ -96,7 +101,7 @@
             </select>
           </h3>
           <div id="journey">
-            <a href=" ">Start your wonderful journey <img src="./img/next.png" alt="" />
+            <a href="../Process/PickUpLocation.html">Start your wonderful journey <img src="./img/next.png" alt="" />
             </a>
           </div>
         </div>

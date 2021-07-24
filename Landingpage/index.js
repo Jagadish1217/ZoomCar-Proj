@@ -1,3 +1,12 @@
+document.title = `Self Drive Car Rentals in ${localStorage.getItem(
+  "SelectedCity"
+)} | Book Zoomcar for Personal Use`;
+// City Value
+var cityValue = document.getElementById("cityvalue");
+cityValue.innerHTML = localStorage.getItem("SelectedCity");
+cityValue.addEventListener("click", function () {
+  window.location.href = "../CityPopupPage/CityPopup.html";
+});
 //LogIn POP
 var logIn = document.getElementById("login_btn");
 logIn.addEventListener("click", popupCome2);
@@ -369,8 +378,10 @@ setInterval(function () {
 }, 3000);
 
 function checkCity() {
+  // console.log("TEST");
   var city = document.getElementById("city").value;
-  localStorage.setItem("city", JSON.stringify(city));
+  // localStorage.setItem("city", JSON.stringify(city));
+  window.location.href = "../CityPopupPage/CityPopup.html";
 }
 
 //                                      MIDDLE PAGE JS                             //
