@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+    <link as="script" href="vendor.d3659e0e51d602c684fa.js" rel="preload">
+    <link as="script" href="payment.7345a39339eddef3dd3a.js" rel="preload">
+    
+</head>
+<body>
+    <div class="search-steps-bg">
+        <div class="search-steps droid f-b">
+            <div class="inner-steps">
+                <div class="col-md-12">
+                    <!-- - cls = (step > 1 ? 'complete' : 'active') -->
+                    <!-- - onclick = (step > 1 ? "window.location = '/#{@city.link_name.downcase}/search';" : "") -->
+                    <!-- .steps_block.tc{class: cls, onclick: "#{onclick}"} -->
+                    <!-- .step -->
+                    <!-- %p 1 -->
+                    <!-- .step-text.t-c{class: cls, onclick: "#{onclick}"} -->
+                    <!-- .txt -->
+                    <!-- Select Car -->
+                    <!-- .steps_block.tc{class: cls, onclick: "#{onclick}"} -->
+                    <!-- .horizontal-green-line -->
+                    <div class="complete steps_block tc">
+                        <div class="step">
+                            <p class="step_number" id="step_complete">1</p>
+                            <span class="step_tick white glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="complete step-text t-c">
+                            <div class="txt">
+                                Login/Signup
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete steps_block tc">
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="complete steps_block">
+                        <div class="step">
+                            <p class="step_number">2</p>
+                            <span class="step_tick white glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="complete step-text t-c">
+                            <div class="txt">
+                                Checkout
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete steps_block tc">
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="active steps_block">
+                        <div class="step">
+                            <p class="step_number">3</p>
+                            <span class="step_tick white glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="active step-text t-c">
+                            <div class="txt">
+                                Payment
+                            </div>
+                        </div>
+                    </div>
+                    <div class="active steps_block tc">
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="normal steps_block">
+                        <div class="step">
+                            <p class="step_number">4</p>
+                            <span class="step_tick white glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="normal step-text t-c">
+                            <div class="txt">
+                                Profile
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile_search_steps mobile_container p-t10 p-r10">
+        <div class="search_step_title">
+            Payment
+            <div class="search_step_number">
+                Step
+                <span class="green">
+                    4/5
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="red t-c p-b10 p-t10" id="overlappingBookingError">
+    </div>
+    <div class="mobile_container">
+        <div class="size-14 m-l5 m-r3 m-t10 mobile_car_info" style="height: 300px;">
+            <div class="outerDiv inline-block">
+                <div class="carBlock innerDiv border-r-e">
+                    <div class="colored">
+                        <img alt="Ecosport" class="car7 m-auto"
+                            src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/16f10a6059e90dc8193fa5a8ace6263fc39e7689.png?1503048248">
+                        <!-- .m-auto{:class => 'car' + @booking.cargroup_id.to_s} -->
+                    </div>
+                    <p class="size-18 m-0">
+                        Ecosport
+                    </p>
+                    <p class="size-14 lgrey m-0">
+                        5
+                        Seater
+                    </p>
+                </div>
+                <div class="innerDiv p-t10" id="journeyDuration" style="height: 100%; padding-top: 8%;">
+                    <div class="start f-w600">
+                        <div class="inline-block">
+                            06:00 PM
+                        </div>
+                        <div class="inline-block lgrey">
+                            24 Jul, Sat
+                        </div>
+                    </div>
+                    <div class="comTo"></div>
+                    <div class="end f-w600">
+                        <div class="inline-block">
+                            12:00 AM
+                        </div>
+                        <div class="inline-block lgrey">
+                            25 Jul, Sun
+                        </div>
+                    </div>
+                    <p class="size-10 p-10 t-c m-0">
+                        6 hours
+                    </p>
+                </div>
+                <div class="zapMapSnippet">
+                    <div class="snippetMapAreaMobile" id="snippetMapAreaMobile"></div>
+                    <div class="snippetTextSection">
+                        <input name="isJitBooking" type="hidden" value="false">
+                        <input name="zap_lat" type="hidden" value="23.011902">
+                        <input name="zap_lng" type="hidden" value="72.50962">
+                        <input name="zap_radius" type="hidden" value="2.01">
+                        <p class="snippetText">
+                            Prahlad Nagar Garden
+                        </p>
+                        <div class="helpIcon" data-lat="23.011902" data-lng="72.50962" data-toggle="modal"
+                            data-radius="2.01">
+                            ?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-5 size-14 bg-w amountDiv" id="amountDiv" style="display: none">
+            <div class="col-xs-12 f-w600 p-10 border-b-e" id="tariffDiv">
+                Tariff
+                <!-- %span.help.size-12.pointer.questionMark{'data-placement' => "bottom", 'data-toggle' => "tooltip", 'data-html' => 'true', 'data-title' => "Tariff Calculator"} -->
+                <!-- (?) -->
+                <div class="right-col blue">
+                    ₹ 2,126
+                </div>
+            </div>
+            <div class="col-xs-12 f-w100 p-10" id="securityDiv">
+                Refundable Deposit
+                <div class="right-col securityTotal">
+                    ₹ 1,299
+                </div>
+            </div>
+            <!-- removed in new design of sidebar -->
+            <div class="p-10 size-16 f-w600 payable_green_bg totalDiv" id="totalDiv" style="display: none">
+                <div class="col-xs-12 p-0">
+                    Total Payable Amount
+                    <div class="right-col green" id="sidebarAmount">
+                        <span class="m-r5">₹</span>
+                        3,425
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var googleMapKey = "AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k";
+            var is_normal_search = true;
+            document.addEventListener('DOMContentLoaded', function () {
+                if (is_normal_search && isMobile() && (typeof google === 'undefined' || typeof google.maps === 'undefined')) {
+                    // load the google maps script and call teh callback function
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://maps.googleapis.com/maps/api/js?key=" + googleMapKey + "&libraries=places&callback=initZapMapSnippet";
+                    document.body.appendChild(script);
+                }
+            });
+
+            function checkjQueryMobileSummary() {
+                if (window.jQuery) {
+                    var is_chauffeur = "false";
+                    var height = "59%", paddingTop = "5%";
+                    if (is_normal_search) {
+                        height = "100%";
+                        paddingTop = "8%";
+                        $('.mobile_car_info').css("height", "300px");
+                    }
+                    if (is_chauffeur != "true") {
+                        $('#journeyDuration').css({
+                            "height": height,
+                            "paddingTop": paddingTop
+                        });
+                        $('#journeyLocation').css("display", "flex");
+                    }
+
+                    $('.helpIcon').on('click', function (event) {
+                        initZapMapModal(event.target, new Date(1627129800 * 1000));
+                    })
+                }
+                else {
+                    setTimeout(checkjQueryMobileSummary, 1000);
+                }
+            }
+            checkjQueryMobileSummary();
+        </script>
+    
+    </div>
+    <div class="payment-wrapper m-t10 o-auto">
+        <div id="payment-app">
+            <!---->
+            <!---->
+            <div class="payable-amount">
+                <h2>Total Payable Amount</h2>
+                <div class="amount"><span>₹</span>3425</div>
+            </div>
+            <div>
+                <!---->
+                <div class="payment-methods">
+                    <div class="header">
+                        <h2>Payment Methods</h2>
+                        <div class="booking-id">Booking ID: <span>JPS69ZM21</span></div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tabs">
+                            <div class="inner">
+                                <div class="tab selected two-tabs">
+                                    <div id="card">Card Payment</div>
+                                </div>
+                                <div class="tab two-tabs">
+                                    <div>Netbanking</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-content">
+                            <div class="methods">
+                                <div class="card-payment">
+                                    <!---->
+                                    <div class="card">
+                                        <div class="card-type"></div>
+                                        <div class="card-number-wrapper"><input type="text" maxlength="22"
+                                                placeholder="ENTER CARD NUMBER" autofocus="autofocus" class="number">
+                                            <div class="invalid" style="display: none;">ENTER A VALID CARD NUMBER</div>
+                                        </div>
+                                        <div class="card-other-info"><input id="expiry-month" placeholder="MM" type="text"
+                                                class="month"> <span class="seperator-line">/</span> <input
+                                                placeholder="YYYY" type="text" id="expiry-year" class="year"> <input
+                                                maxlength="3" placeholder="CVV" type="password" id="cvv" pattern="[0-9]"
+                                                class="cvv">
+                                            <div class="help"><span class="icon">?</span>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="saved-card">
+                                            <div class="help"><span class="icon selected">7</span>
+                                                <!---->
+                                            </div>
+                                            <div class="title">Save card</div>
+                                        </div>
+                                    </div>
+                                    <!----> <button disabled="disabled" class="payment-proceed-button">
+                                        <div>Pay ₹3425</div>
+                                        <div class="wait-loader" style="display: none;">
+                                            <div class="rect1"></div>
+                                            <div class="rect2"></div>
+                                            <div class="rect3"></div>
+                                            <div class="rect4"></div>
+                                            <div class="rect5"></div>
+                                        </div>
+                                    </button>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="powered-by"><img
+                                    src="/assets/component-images/cards.737b6c80372e417fc96258166b80605a.png"
+                                    alt="Godaddy verified &amp; secured" width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-b fr">
+            <div class="bg-w grey size-14">
+                <div class="p-10 size-18 p-l10 p-r10 t-c">
+                    <div class="sum">
+                        SUMMARY
+                        <!-- / removing pencil icon for now, will put it ack once the -->
+                        <!-- / designs are ready for the new widget -->
+                    </div>
+                    <div class="fc"></div>
+                </div>
+                <div class="p-r20 p-l20 size-16 border-b-c m-l20 m-r20 p-b10">
+                    <div class="fl m-l20 colored">
+                        <img alt="Ecosport" class="car7 m-auto"
+                            src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/f990b83bb3d31462f11a1c4f935bc66658c48b65.png?1584536115"
+                            style="width: 100%">
+                        <!-- .m-auto{:class => 'car' + @booking.cargroup_id.to_s} -->
+                    </div>
+                    <div class="t-c p-t15 p-l15">
+                        <div class="size-18">
+                            Ecosport
+                        </div>
+                        <div class="size-14 m-t5 lgrey">
+                            (
+                            5
+                            Seater )
+                        </div>
+                    </div>
+                    <div class="fc"></div>
+                </div>
+                <div class="row p-t20 p-b10 t-c">
+                    <div class="inline-block start text-up fw-600">
+                        <div>
+                            06:00 PM
+                        </div>
+                        <div class="size-11 f-w100">
+                            24 Jul 21, Sat
+                        </div>
+                    </div>
+                    <div class="comTo inline-block"></div>
+                    <div class="inline-block end text-up fw-600">
+                        <div>
+                            12:00 AM
+                        </div>
+                        <div class="size-11 f-w100">
+                            25 Jul 21, Sun
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-b-c p-b10">
+                </div>
+                <div class="zapMapSnippet">
+                    <div class="snippetMapAreaWeb" id="snippetMapAreaWeb" style="position: relative; overflow: hidden;">
+                        <div
+                            style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                            <div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"
+                                class="gm-style">
+                                <div><button
+                                        style="background: transparent none repeat scroll 0% 0%; display: block; border: medium none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; z-index: 1000002; left: -100000px; top: -100000px;"
+                                        draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts"
+                                        type="button"></button></div>
+                                <div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"
+                                    tabindex="0" aria-label="Map" aria-roledescription="map" role="group">
+                                    <div
+                                        style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);">
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
+                                            <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+                                                <div
+                                                    style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                    <div
+                                                        style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+                                                        <div style="width: 256px; height: 256px;"></div>
+                                                    </div>
+                                                    <div
+                                                        style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;">
+                                                        <div style="width: 256px; height: 256px;"></div>
+                                                    </div>
+                                                    <div
+                                                        style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;">
+                                                        <div style="width: 256px; height: 256px;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;">
+                                            <div style="position: absolute; left: 0px; top: 0px; z-index: 30;">
+                                                <div
+                                                    style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                    <div
+                                                        style="width: 256px; height: 256px; position: absolute; left: 0px; top: 0px;">
+                                                        <canvas
+                                                            style="width: 256px; height: 256px; user-select: none; position: absolute; left: 0px; top: 0px;"
+                                                            draggable="false" width="384" height="384"></canvas></div>
+                                                    <div
+                                                        style="width: 256px; height: 256px; position: absolute; left: -256px; top: 0px;">
+                                                    </div>
+                                                    <div
+                                                        style="width: 256px; height: 256px; position: absolute; left: 256px; top: 0px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;">
+                                        </div>
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
+                                        </div>
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+                                            <div
+                                                style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                <div
+                                                    style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                    <img style="width: 256px; height: 256px; user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"
+                                                        draggable="false" alt="" role="presentation"
+                                                        src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1435!3i889!4i256!2m3!1e0!2sm!3i564290396!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=26801">
+                                                </div>
+                                                <div
+                                                    style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                    <img style="width: 256px; height: 256px; user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"
+                                                        draggable="false" alt="" role="presentation"
+                                                        src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1436!3i889!4i256!2m3!1e0!2sm!3i564290408!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=51421">
+                                                </div>
+                                                <div
+                                                    style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                    <img style="width: 256px; height: 256px; user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"
+                                                        draggable="false" alt="" role="presentation"
+                                                        src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1437!3i889!4i256!2m3!1e0!2sm!3i564290408!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=101388">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"
+                                        class="gm-style-pbc">
+                                        <p class="gm-style-pbt"></p>
+                                    </div>
+                                    <div
+                                        style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
+                                        <div
+                                            style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);">
+                                            <div
+                                                style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;">
+                                            </div>
+                                            <div
+                                                style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;">
+                                            </div>
+                                            <div
+                                                style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+                                            </div>
+                                            <div
+                                                style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;">
+                                                <div
+                                                    style="z-index: -202; cursor: pointer; display: none; touch-action: none;">
+                                                    <div
+                                                        style="width: 30px; height: 27px; overflow: hidden; position: absolute;">
+                                                        <img style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 90px; height: 27px;"
+                                                            alt="" src="https://maps.gstatic.com/mapfiles/undo_poly.png"
+                                                            draggable="false"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><iframe aria-hidden="true" tabindex="-1"
+                                    style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;"
+                                    frameborder="0"></iframe>
+                                <div
+                                    style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);">
+                                </div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div><button
+                                        style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; margin: 10px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; display: none; top: 0px; right: 0px;"
+                                        draggable="false" aria-label="Toggle fullscreen view" title="Toggle fullscreen view"
+                                        type="button" class="gm-control-active gm-fullscreen-control"><img
+                                            style="height: 18px; width: 18px;"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                            alt=""><img style="height: 18px; width: 18px;"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                            alt=""><img style="height: 18px; width: 18px;"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                            alt=""></button></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div>
+                                    <div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom"
+                                        style="margin: 10px; user-select: none; position: absolute; display: none; bottom: 26px; left: 0px;"
+                                        draggable="false" controlwidth="0" controlheight="0">
+                                        <div class="gmnoprint" controlwidth="40" controlheight="40"
+                                            style="display: none; position: absolute;">
+                                            <div
+                                                style="background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; width: 40px; height: 40px;">
+                                                <button
+                                                    style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: none; border: 0px none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; left: 0px; top: 0px; overflow: hidden; width: 40px; height: 40px;"
+                                                    draggable="false" aria-label="Rotate map clockwise"
+                                                    title="Rotate map clockwise" type="button"
+                                                    class="gm-control-active"><img style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"></button>
+                                                <div
+                                                    style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); display: none;">
+                                                </div><button
+                                                    style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: none; border: 0px none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; left: 0px; top: 0px; overflow: hidden; width: 40px; height: 40px; transform: scaleX(-1);"
+                                                    draggable="false" aria-label="Rotate map counterclockwise"
+                                                    title="Rotate map counterclockwise" type="button"
+                                                    class="gm-control-active"><img style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 20px; height: 20px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"></button>
+                                                <div
+                                                    style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); display: none;">
+                                                </div><button
+                                                    style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; border: 0px none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; top: 0px; left: 0px; overflow: hidden; width: 40px; height: 40px;"
+                                                    draggable="false" aria-label="Tilt map" title="Tilt map" type="button"
+                                                    class="gm-tilt gm-control-active"><img style="width: 18px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 18px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"><img
+                                                        style="width: 18px;"
+                                                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div></div>
+                                <div>
+                                    <div
+                                        style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;">
+                                        <a style="position: static; overflow: visible; float: none; display: inline;"
+                                            target="_blank" rel="noopener"
+                                            href="https://maps.google.com/maps?ll=23.011902,72.50962&amp;z=11&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3"
+                                            title="Open this area in Google Maps (opens a new window)">
+                                            <div style="width: 66px; height: 26px; cursor: pointer;"><img
+                                                    style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px none; padding: 0px; margin: 0px;"
+                                                    alt=""
+                                                    src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"
+                                                    draggable="false"></div>
+                                        </a></div>
+                                </div>
+                                <div></div>
+                                <div>
+                                    <div class="gmnoprint"
+                                        style="z-index: 1000001; position: absolute; right: 158px; bottom: 0px;">
+                                        <div draggable="false" style="user-select: none; height: 14px; line-height: 14px;"
+                                            class="gm-style-cc">
+                                            <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                                <div style="width: 1px;"></div>
+                                                <div
+                                                    style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                                </div>
+                                            </div>
+                                            <div
+                                                style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                                <button
+                                                    style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: inline-block; border: 0px none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: normal;"
+                                                    draggable="false" aria-label="Keyboard shortcuts"
+                                                    title="Keyboard shortcuts" type="button">Keyboard shortcuts</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gmnoprint"
+                                        style="z-index: 1000001; position: absolute; right: 71px; bottom: 0px; width: 87px;">
+                                        <div draggable="false" style="user-select: none; height: 14px; line-height: 14px;"
+                                            class="gm-style-cc">
+                                            <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                                <div style="width: 1px;"></div>
+                                                <div
+                                                    style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                                </div>
+                                            </div>
+                                            <div
+                                                style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                                <button
+                                                    style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: none; border: 0px none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: normal;"
+                                                    draggable="false" aria-label="Map Data" title="Map Data"
+                                                    type="button">Map Data</button><span>Map data ©2021</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="gmnoprint gm-style-cc"
+                                        style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"
+                                        draggable="false">
+                                        <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                            <div style="width: 1px;"></div>
+                                            <div
+                                                style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                            </div>
+                                        </div>
+                                        <div
+                                            style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                            <a style="text-decoration: none; cursor: pointer; color: rgb(0, 0, 0);"
+                                                href="https://www.google.com/intl/en-US_US/help/terms_maps.html"
+                                                target="_blank" rel="noopener">Terms of Use</a></div>
+                                    </div>
+                                    <div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;">
+                                        <div
+                                            style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">
+                                            Map data ©2021</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="snippetTextSection">
+                        <input name="isJitBooking" type="hidden" value="false">
+                        <input name="zap_lat" type="hidden" value="23.011902">
+                        <input name="zap_lng" type="hidden" value="72.50962">
+                        <input name="zap_radius" type="hidden" value="2.01">
+                        <p class="snippetText">
+                            Prahlad Nagar Garden
+                        </p>
+                        <div class="helpIcon" data-lat="23.011902" data-lng="72.50962" data-toggle="modal"
+                            data-radius="2.01">
+                            ?
+                        </div>
+                    </div>
+                </div>
+                <!-- removed in new design of sidebar -->
+                <div class="row p-t20 p-b20 amountDiv" id="amountDiv" style="display: none">
+                    <div class="col-md-12 m-b10 size-14 f-w100" id="tariffDiv">
+                        Tariff
+                        <!-- %span.help.size-12.pointer.questionMark{'data-placement' => "bottom", 'data-toggle' => "tooltip", 'data-html' => 'true', 'data-title' => "Tariff Calculator"} -->
+                        <!-- (?) -->
+                        <div class="right-col">
+                            ₹ 2,126
+                        </div>
+                    </div>
+                    <div class="col-md-12 f-w100" id="securityDiv">
+                        Refundable Deposit
+                        <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                            data-title="Fully refundable security deposit which will be released once your booking is over. It will take 3-5 days before the refund reflects in your account."
+                            data-toggle="tooltip" data-original-title="" title="">
+                            (?)
+                        </span>
+                        <div class="right-col securityTotal">
+                            ₹ 1,299
+                        </div>
+                    </div>
+                </div>
+                <!-- removed in new design of sidebar -->
+                <div class="border-t-c border-b-c p-t20 p-b20 size-16 f-w600 payable_green_bg totalDiv" id="totalDiv"
+                    style="display: none">
+                    <div class="col-md-12">
+                        PAYABLE AMOUNT
+                        <div class="right-col" id="sidebarAmount">
+                            <span class="m-r5">₹</span>
+                            3,425
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-b-c p-t20 p-b20">
+                    <div class="col-md-12 m-b10 size-14 f-w100">
+                        Free Km
+                        <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                            data-title="All zoomcar reservations come with free driving km, which are based on selected free km package and reservation duration."
+                            data-toggle="tooltip" data-original-title="" title="">
+                            (?)
+                        </span>
+                        <div class="right-col">
+                            36.0
+                            Km
+                        </div>
+                    </div>
+                    <div class="col-md-12 m-b10 size-14 f-w100">
+                        Excess Km
+                        <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                            data-title="If you travel more than 36.0 Km during the reservation, then all km above 36.0 will be charged at this price."
+                            data-toggle="tooltip" data-original-title="" title="">
+                            (?)
+                        </span>
+                        <div class="right-col">
+                            ₹ 15/km
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-t20 p-b10">
+                    <div class="col-md-12 t-c size-14">
+                        <p>FARE INCLUDES</p>
+                    </div>
+                </div>
+                <div class="row d-f jc-c">
+                    <div class="col-xs-4">
+                        <div class="fuel_image"></div>
+                        <p class="t-c f-w100 size-12 p-b10">
+                            FUEL
+                        </p>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="insurance_image"></div>
+                        <p class="t-c f-w100 size-12 p-b10">
+                            INSURANCE
+                        </p>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="taxes_image"></div>
+                        <p class="t-c f-w100 size-12 p-b10">
+                            TAXES
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var googleMapKey = "AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k";
+                var is_normal_search = true;
+                document.addEventListener('DOMContentLoaded', function () {
+                    if (is_normal_search && !isMobile() && (typeof google === 'undefined' || typeof google.maps === 'undefined')) {
+                        // load the google maps script and call teh callback function
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.src = "https://maps.googleapis.com/maps/api/js?key=" + googleMapKey + "&libraries=places&callback=initZapMapSnippet";
+                        document.body.appendChild(script);
+                    }
+                })
+
+                function checkjQuery() {
+                    if (window.jQuery) {
+                        $('.helpIcon').on('click', function (event) {
+                            initZapMapModal(event.target, new Date(1627129800 * 1000));
+                        })
+                    }
+                    else {
+                        setTimeout(checkjQuery, 1000);
+                    }
+                }
+                checkjQuery();
+            </script>
+    
+        </div>
+    </div>
+
+</body>
+</html>

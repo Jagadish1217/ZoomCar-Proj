@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+document.querySelector("body > div.page-wrap > div > div.wrapper > div.pay_section.fl > div:nth-child(4)")
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkOut.css">
+    <link as="script" href="//www.zoomcar.com//assets/vendor.d3659e0e51d602c684fa.js" rel="preload">
+    <link as="script" href="vendor.js" rel="preload">
+
+</head>
+
+<body>
+    <div class="page-wrap">
+        <div class="content">
+            <div class="search-steps-bg">
+                <div class="search-steps droid f-b">
+                    <div class="inner-steps">
+                        <div class="col-md-12">
+                            <!-- - cls = (step > 1 ? 'complete' : 'active') -->
+                            <!-- - onclick = (step > 1 ? "window.location = '/#{@city.link_name.downcase}/search';" : "") -->
+                            <!-- .steps_block.tc{class: cls, onclick: "#{onclick}"} -->
+                            <!-- .step -->
+                            <!-- %p 1 -->
+                            <!-- .step-text.t-c{class: cls, onclick: "#{onclick}"} -->
+                            <!-- .txt -->
+                            <!-- Select Car -->
+                            <!-- .steps_block.tc{class: cls, onclick: "#{onclick}"} -->
+                            <!-- .horizontal-green-line -->
+                            <div class="complete steps_block tc">
+                                <div class="step">
+                                    <p class="step_number" id="step_complete">1</p>
+                                    <span class="step_tick white glyphicon glyphicon-ok"></span>
+                                </div>
+                                <div class="complete step-text t-c">
+                                    <div class="txt">
+                                        Login/Signup
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="complete steps_block tc">
+                                <div class="horizontal-line"></div>
+                            </div>
+                            <div class="active steps_block">
+                                <div class="step">
+                                    <p class="step_number">2</p>
+                                    <span class="step_tick white glyphicon glyphicon-ok"></span>
+                                </div>
+                                <div class="active step-text t-c">
+                                    <div class="txt">
+                                        Checkout
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="active steps_block tc">
+                                <div class="horizontal-line"></div>
+                            </div>
+                            <div class="normal steps_block">
+                                <div class="step">
+                                    <p class="step_number">3</p>
+                                    <span class="step_tick white glyphicon glyphicon-ok"></span>
+                                </div>
+                                <div class="normal step-text t-c">
+                                    <div class="txt">
+                                        Payment
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="normal steps_block tc">
+                                <div class="horizontal-line"></div>
+                            </div>
+                            <div class="normal steps_block">
+                                <div class="step">
+                                    <p class="step_number">4</p>
+                                    <span class="step_tick white glyphicon glyphicon-ok"></span>
+                                </div>
+                                <div class="normal step-text t-c">
+                                    <div class="txt">
+                                        Profile
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="mobile_search_steps mobile_container p-t10 p-r10">
+                <div class="search_step_title">
+                    Checkout
+                    <div class="search_step_number">
+                        Step
+                        <span class="green">
+                            3/5
+                        </span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="wrapper">
+                <div class="pay_section fl">
+                    <!-- <div class="mobile_container">
+                        <div class="size-14 m-l5 m-r3 m-t10 mobile_car_info" style="height: 300px;">
+                            <div class="outerDiv inline-block">
+                                <div class="carBlock innerDiv border-r-e">
+                                    <div class="colored">
+                                        <img alt="Creta AT" class="car90 m-auto"
+                                            src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/78219d5d25fa9c2d29156d112ee4b5bb22f0dd95.jpg?1539162987">
+                                         .m-auto{:class => 'car' + @booking.cargroup_id.to_s} -->
+                    <!-- </div>
+                                    <p class="size-18 m-0">
+                                        Creta AT
+                                    </p>
+                                    <p class="size-14 lgrey m-0">
+                                        5
+                                        Seater
+                                    </p>
+                                </div>
+                                <div class="innerDiv p-t10" id="journeyDuration" style="height: 100%; padding-top: 8%;">
+                                    <div class="start f-w600">
+                                        <div class="inline-block">
+                                            04:30 PM
+                                        </div>
+                                        <div class="inline-block lgrey">
+                                            22 Jul, Thu
+                                        </div>
+                                    </div>
+                                    <div class="comTo"></div>
+                                    <div class="end f-w600">
+                                        <div class="inline-block">
+                                            10:30 PM
+                                        </div>
+                                        <div class="inline-block lgrey">
+                                            23 Jul, Fri
+                                        </div>
+                                    </div>
+                                    <p class="size-10 p-10 t-c m-0">
+                                        1 day, 6 hours
+                                    </p>
+                                </div>
+                                <div class="zapMapSnippet">
+                                    <div class="snippetMapAreaMobile" id="snippetMapAreaMobile"></div>
+                                    <div class="snippetTextSection">
+                                        <input name="isJitBooking" type="hidden" value="false">
+                                        <input name="zap_lat" type="hidden" value="23.011902">
+                                        <input name="zap_lng" type="hidden" value="72.50962">
+                                        <input name="zap_radius" type="hidden" value="">
+                                        <p class="snippetText" style="width: 100%;">
+                                            Prahlad Nagar Garden
+                                        </p>
+                                        <div class="helpIcon hide" data-lat="23.011902" data-lng="72.50962"
+                                            data-toggle="modal">
+                                            ?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-5 size-14 bg-w amountDiv" id="amountDiv" style="display: none">
+                            <div class="col-xs-12 f-w600 p-10 border-b-e" id="tariffDiv">
+                                Tariff
+                                %span.help.size-12.pointer.questionMark{'data-placement' => "bottom", 'data-toggle' => "tooltip", 'data-html' => 'true', 'data-title' => "Tariff Calculator"} -->
+                    <!-- (?) -->
+                    <!-- <div class="right-col blue">
+                                    ₹ 4,354
+                                </div>
+                            </div>
+                            <div class="col-xs-12 f-w100 p-10" id="securityDiv">
+                                Refundable Deposit
+                                <div class="right-col securityTotal">
+                                    ₹ 1,299
+                                </div>
+                            </div>
+                            <removed in new design of sidebar -->
+                    <!-- <div class="p-10 size-16 f-w600 payable_green_bg totalDiv" id="totalDiv"
+                                style="display: none">
+                                <div class="col-xs-12 p-0">
+                                    Total Payable Amount
+                                    <div class="right-col green" id="sidebarAmount">₹
+                                        5,653
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var googleMapKey = "AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k";
+                            var is_normal_search = true;
+                            document.addEventListener('DOMContentLoaded', function () {
+                                if (is_normal_search && isMobile() && (typeof google === 'undefined' || typeof google.maps === 'undefined')) {
+                                    // load the google maps script and call teh callback function
+                                    var script = document.createElement("script");
+                                    script.type = "text/javascript";
+                                    script.src = "https://maps.googleapis.com/maps/api/js?key=" + googleMapKey + "&libraries=places&callback=initZapMapSnippet";
+                                    document.body.appendChild(script);
+                                }
+                            }); -->
+                    <!-- 
+                    function checkjQueryMobileSummary() {
+                    if (window.jQuery) {
+                    var is_chauffeur = "false";
+                    var height = "59%", paddingTop = "5%";
+                    if (is_normal_search) {
+                    height = "100%";
+                    paddingTop = "8%";
+                    $('.mobile_car_info').css("height", "300px");
+                    }
+                    if (is_chauffeur != "true") {
+                    $('#journeyDuration').css({
+                    "height": height,
+                    "paddingTop": paddingTop
+                    });
+                    $('#journeyLocation').css("display", "flex");
+                    }
+
+                    $('.helpIcon').on('click', function (event) {
+                    initZapMapModal(event.target, new Date(1626951600 * 1000));
+                    })
+                    }
+                    else {
+                    setTimeout(checkjQueryMobileSummary, 1000);
+                    }
+                    }
+                    checkjQueryMobileSummary(); -->
+                    <!-- </script> -->
+
+                    <!-- </div> -->
+                    <div class="tariff-details fl">
+                        <div class="mobile_checkout_section">
+                            <div class="row border-b-e mobile_remove">
+                                <div class="col-md-12 size-18 p-l10 p-r10">
+                                    CHECKOUT
+                                </div>
+                            </div>
+                            <div class="row border-b-e">
+                                <div class="col-xs-12 size-16 p-l10 p-r10" id="PromoCreditsDiv">
+                                    <span class="fl m-r5">
+                                        Booking Fee
+                                        <br>
+                                        <span class="size-12 lgrey">Booking fee excludes fuel cost</span>
+                                    </span>
+                                    <div class="right-col blue">
+                                        ₹ 4,354
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="clear:both"></div>
+                                <div id="couponClick" style="cursor:pointer;position:relative;">
+                                    <div
+                                        class="js-couponTooltip hk-c-toolTips__container--infocus hk-c-toolTips__container hk-c-toolTips__container--dark hk-c-toolTips__container--left hk-sTab__setPriceDrop hk-u-disp--ib">
+                                        <img style="margin-top:5px;"
+                                            src="chrome-extension://ojplmecpdpgccookcobabopnaifgidhf/apply-coupon.png">
+                                        <div class="hk-c-toolTip hk-u-padding__15">
+                                            <div style="position: absolute;top: 5px;right: 5px;font-size: 21px;font-weight: bold;cursor: pointer;z-index: 1000;width: 20px;height: 20px;line-height: 100%;"
+                                                class="js-closeCouponTooltip">×</div><svg class="hk-ext__pulse-svg"
+                                                version="1.1" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
+                                                style="position: absolute; z-index: 100; top: 8px; left: 8px; height:10px">
+                                                <circle style="fill:#FFFFFF" class="hk-ext__circle hk-ext__first-circle"
+                                                    cx="29" cy="29" opacity="0" r="25"></circle>
+                                                <circle style="fill:#FFFFFF"
+                                                    class="hk-ext__circle hk-ext__second-circle" cx="29" cy="29"
+                                                    opacity="0" r="25"></circle>
+                                                <circle style="fill:#FFFFFF" class="hk-ext__circle hk-ext__third-circle"
+                                                    cx="29" cy="29" opacity="0" r="25"></circle>
+                                                <g class="hk-ext__opacityPulse">
+                                                    <circle cx="29" cy="29" r="29" style="fill:#FFFFFF"></circle>
+                                                    <path
+                                                        d="M37.0171132,8 L15,27.6897228 L26.7948821,30.8400784 L20.5042783,50.5298012 L42.5213915,28.4773117 L32.2991604,24.5393671 L37.0171132,8 L37.0171132,8 Z"
+                                                        fill="#333333" style="fill: #be1e2d;"></path>
+                                                </g>
+                                            </svg>
+                                            <div class="hk-c-toolTip__wrap hk-l-flexColumns hk-u-noWrap">
+                                                <div><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAMAAAAc9R5vAAADAFBMVEVMaXEAAAAAAHYAPUkAJS8AIEEALjwAKToAIjUAJzjDnggAJjsAJDwLFxwAK0BNQgsAIzAALT8AHzApIBAHJz8EJz4GJzfGogAGLD8EKkEFJDYFKD1yXQ+mggoaOT7GowA0SDnJoQBwbC3FngAHIioVKiwXKyskKhsiKyDBmwXHoAElLSBkUg8mMB/GnwAxNR3HoABCQBzJogCPcwtNRRqkix6rkRp5ah9RShthVRVpXRzFngCRdQnGnwDAmwCjiBa2lhKLcxSSdwqNdRXFmwCxjgG8lgXFnQCcfgzEmwClhAekgwTFmwCkgwHIoQDBmgC/mgC5lQTDnADAmADCmgHKowDHngDDmwDIoADHnQDCmQDEmgDAlgDCmADDmgDEmwDFmwDGmwDHnADIngDInwDIoADKoQDMowLLpAjNpQTRpgDSpgDPpgvUqADPqBXVqgDRqhPWrAXRqxnXrQbVrBHSrB/WrhTarwXUrhzTriTasAjUriTZshnWsSvetBTbtCDXszHdtijfuBnbtzPeuiXhux/hvCjgvDLdvT7hwDjnwiDmwybpyCjmxz/nxkXryDPqyTjoyUbnyk3qzT7tzjHrzE3x0S7v0TTt0k7w0kfz1i/v00/u1knu1Ffz1z3z1kr32Ej22Uzw2lf33Tb33EPy3Frx3GLy3V333VH430X44ULy3mL23lj64En24VH04Vfz3m3640H04lv34V/25FP44mD541n75kz+50D65lX+50f+50r+6UH+6UX+6Uj96FD35XP+6VD86Fv+6kz+60r+7EX+7Uj+7kP+61P+6ln+7FH+7U786mf+7Fj+707+7F7+7lb66nb+71L+71T56n3+71f+7WL+71n+7mD+713+7mX/80n+7mb+8GH+72n+72r+72z+727+8Gv+8HH/8mX774P+8Hf+8Hr/82n/8XX/8nL/8nj/8nv/9HT/8oD/8oL/9Hn/84P/9Xv/9nf/93T/9Ib/9n//9oP/+Hz+9or/9oj/94T/94r/+Ib/+5L//I9ht2gZAAAAXHRSTlMAAQIDBAUJCw0OERIVFhcXGhwfHyAiJCQnKiwxMTExMjU5PUJCR01UX19kZWZqbXJ3f4GCh4eJi42QkZelp6yytLq8wcPGxsjNzc7V2dnc4ebn6e3t9Pb2+Pj6/Vhe6xwAAAH7SURBVCgVBcFbS5NhAMDx/3PYob1uOpzObaapJCI2SyqCIr9BXvQJ+mbddNd90F1ERFAQxMJgE9HlMHdwzu09PYd+PwEAbMwX51QUjgaXAIAAYH2tWpqbV+kg6l8czwDQALs75fs7TyrMzr63K0u/zwE00HxQffkK59Ls9t7oXTbnu4CCrf3VNy9MHCfGJpPcs/5MDmJQFB5VXz8OEzeXUVpoFT080dMeaNZX9g5vnJx9TDMGZwsHR2/vng7QcunOYWopvP8iHFokG81SdVQbCK3Kje1bl9r9ZRl2WpWndTdtnC5IL0UQaJdIv4TNbtcnt/1xUg5KGa9FJpdaHRc+fBNCKP9pczOWWmVjjTE2cX66lpP4497BWiQT45BaRLPQOsc9VNq+WH6eH+dHceiU9pPe2aIxpc9flQ1rTcapGEShQXM9/nF0zbRe6O9u1fMTj7i6HAqvlF4wy+V4Wi2cTzZWhsIHP89PzhKrZJot3m7mkptV0elVFtKg3eqeDIxRiDArroJFOa379nWj+KsVtXomdcoLETvVG8vANcft6KLT/dONI4NAZIJirdaYD7LCnaI6f6+iWWrReDMjHf4rBUrZ9GY4mcahcSAAqfM5LYOMTO3M2SQ0zoMAkEpnslKC82lsrPeAAACphJLgrLceDyAAAJACvPcAAP8BP9MD77uUqaYAAAAASUVORK5CYII="
+                                                        alt="Coin" style="max-width: inherit;"></div>
+                                                <div class="hk-l-flexCol__col hk-u-padding__h-05">
+                                                    <p><b>Click apply coupon and get lucky.</b><br>Just apply coupons
+                                                        before
+                                                        checkout<br> Stand a chance to win goodies<br>Applicable for all
+                                                        users <br> Winners will be declared tomorrow</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div>
+                                    <div class="promo-div">
+                                        <div class="promo-text">
+                                            Promotional Code
+                                        </div>
+                                        <!---->
+                                        <!---->
+                                        <div class="no-promo d-f jc-sb align-items-c">
+                                            <div class="d-f align-items-c">
+                                                <div class="search_offer_icon"></div>
+                                                <div class="view-offers">View Offers</div>
+                                            </div>
+                                            <div class="arrow">&gt;</div>
+                                        </div>
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-xs-4 p-l10">
+                                    Refundable Deposit
+                                    <span class="help pointer size-12 p-t3" data-html="true" data-placement="bottom"
+                                        data-title="This deposit will return to your account within 3-5 days of your booking's end"
+                                        data-toggle="tooltip" data-original-title="" title="">
+                                        (?)
+                                    </span>
+                                </div>
+                                <div class="col-xs-4 size-12">
+                                </div>
+                                <div class="col-xs-3 p-r10 t-r size-16 right-col">
+                                    ₹ 1,299
+                                </div>
+                            </div>
+                            <div class="row border-t-e payable_green_bg">
+                                <div class="col-xs-12 p-l10 size-16 p-r10 f-w600">
+                                    Total Payable Amount
+                                    <div class="outstandingSide right-col green">
+                                        <div id="DepositFinal">
+                                            ₹
+                                            <span id="final_amount_to_pay">
+                                                5,653
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / home-delivery section -->
+                        <!-- / change the false to hd_enabled to enable home delivery -->
+                        <!-- / Chauffeur driven code for address similar to HD -->
+                        <!-- / zoom air section // -->
+                    </div>
+                    <div class="fc"></div>
+                    <!-- <div class="mobile_container">
+                        <div class="mobile_kms_section">
+                            <div class="row p-t15 p-b15" id="kms_section">
+                                <div class="col-xs-12 m-b10 size-14 f-w100">
+                                    Free Km
+                                    <span class="help size-12 pointer questionMark" data-html="true"
+                                        data-placement="bottom"
+                                        data-title="All zoomcar reservations come with free driving km, which are based on selected free km package and reservation duration."
+                                        data-toggle="tooltip" data-original-title="" title="">
+                                        (?)
+                                    </span>
+                                    <div class="right-col">
+                                        180.0
+                                        Km
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 size-14 f-w100">
+                                    Excess Km
+                                    <span class="help size-12 pointer questionMark" data-html="true"
+                                        data-placement="bottom"
+                                        data-title="If you travel more than 180.0 Km during the reservation, then all km above 180.0 will be charged at this price."
+                                        data-toggle="tooltip" data-original-title="" title="">
+                                        (?)
+                                    </span>
+                                    <div class="right-col">
+                                        ₹ 13/Km
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile_fare_section">
+                            <div class="row p-t15 p-b10" id="fare_include_text">
+                                <div class="col-xs-12 size-14">
+                                    <p>FARE INCLUDES</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="fuel_image"></div>
+                                    <p class="t-c f-w100 size-12 p-b10">
+                                        Fuel
+                                    </p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="insurance_image"></div>
+                                    <p class="t-c f-w100 size-12 p-b10">
+                                        Insurance
+                                    </p>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="taxes_image"></div>
+                                    <p class="t-c f-w100 size-12 p-b10">
+                                        Taxes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> -->
+                    <div class="checkout_button_section t-c fc m-t10">
+                        <div class="m-auto p-t20 p-b20">
+                            <form action="/ahmedabad/bookings/docreate" data-segment-id="CheckoutForm" id="CheckoutForm"
+                                method="post">
+                                <input name="starts" type="hidden" value="2021-07-22 16:30">
+                                <input name="ends" type="hidden" value="2021-07-23 22:30">
+                                <input name="loc" type="hidden" value="5848">
+                                <input name="car" type="hidden" value="90">
+                                <input id="checkoutDeposit" name="deposit" type="hidden" value="1">
+                                <input id="checkoutPreauth" name="preauth" type="hidden" value="0">
+                                <input id="appliedExtWallet" name="useExtWallet" type="hidden" value="0">
+                                <input name="pId" type="hidden" value="1006">
+                                <input name="type" type="hidden" value="normal">
+                                <div class="btn button checkoutButton m-auto" data-cd="noCD" data-status="noHD"
+                                    id="checkoutButton" onclick="checkOut();">
+                                    CHECKOUT
+                                </div>
+                            </form>
+                            <div id="CheckoutWait" style="display:none;">
+                                <br>
+                                <div class="wait"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sidebar-b">
+                    <div class="bg-w grey size-14">
+                        <div class="p-10 size-18 p-l10 p-r10 t-c">
+                            <div class="sum">
+                                SUMMARY
+                                <!-- / removing pencil icon for now, will put it ack once the -->
+                                <!-- / designs are ready for the new widget -->
+                            </div>
+                            <div class="fc"></div>
+                        </div>
+                        <div class="p-r20 p-l20 size-16 border-b-c m-l20 m-r20 p-b10">
+                            <div class="fl m-l20 colored">
+                                <img alt="Creta AT" class="car90 m-auto"
+                                    src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/7939693804d3354d2d03488eca79e9cd7cb8b263.png?1584534080"
+                                    style="width: 100%">
+                                <!-- .m-auto{:class => 'car' + @booking.cargroup_id.to_s} -->
+                            </div>
+                            <div class="t-c p-t15 p-l15">
+                                <div class="size-18">
+                                    Creta AT
+                                </div>
+                                <div class="size-14 m-t5 lgrey">
+                                    (
+                                    5
+                                    Seater )
+                                </div>
+                            </div>
+                            <div class="fc"></div>
+                        </div>
+                        <div class="row p-t20 p-b10 t-c">
+                            <div class="inline-block start text-up fw-600">
+                                <div>
+                                    04:30 PM
+                                </div>
+                                <div class="size-11 f-w100">
+                                    22 Jul 21, Thu
+                                </div>
+                            </div>
+                            <div class="comTo inline-block"></div>
+                            <div class="inline-block end text-up fw-600">
+                                <div>
+                                    10:30 PM
+                                </div>
+                                <div class="size-11 f-w100">
+                                    23 Jul 21, Fri
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-b-c p-b10">
+                        </div>
+                        <div class="zapMapSnippet">
+                            <div class="snippetMapAreaWeb" id="snippetMapAreaWeb"
+                                style="position: relative; overflow: hidden;">
+                                <div
+                                    style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                                    <div class="gm-style"
+                                        style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;">
+                                        <div><button draggable="false" aria-label="Keyboard shortcuts"
+                                                title="Keyboard shortcuts" type="button"
+                                                style="background: none transparent; display: block; border: none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; z-index: 1000002; left: -100000px; top: -100000px;"></button>
+                                        </div>
+                                        <div tabindex="0" aria-label="Map" aria-roledescription="map" role="group"
+                                            style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;">
+                                            <div
+                                                style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+                                                <div
+                                                    style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
+                                                    <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+                                                        <div
+                                                            style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                            <div
+                                                                style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+                                                                <div style="width: 256px; height: 256px;"></div>
+                                                            </div>
+                                                            <div
+                                                                style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;">
+                                                                <div style="width: 256px; height: 256px;"></div>
+                                                            </div>
+                                                            <div
+                                                                style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;">
+                                                                <div style="width: 256px; height: 256px;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;">
+                                                </div>
+                                                <div
+                                                    style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;">
+                                                </div>
+                                                <div
+                                                    style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
+                                                    <div style="position: absolute; left: 0px; top: 0px; z-index: -1;">
+                                                        <div
+                                                            style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                            <div
+                                                                style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;">
+                                                            </div>
+                                                            <div
+                                                                style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;">
+                                                            </div>
+                                                            <div
+                                                                style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;">
+                                                        <img alt=""
+                                                            src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png"
+                                                            draggable="false"
+                                                            style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+                                                    </div>
+                                                </div>
+                                                <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+                                                    <div
+                                                        style="position: absolute; z-index: 989; transform: matrix(1, 0, 0, 1, -128, -107);">
+                                                        <div
+                                                            style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                            <img draggable="false" alt="" role="presentation"
+                                                                src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1435!3i889!4i256!2m3!1e0!2sm!3i563290120!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=98210"
+                                                                style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+                                                        </div>
+                                                        <div
+                                                            style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                            <img draggable="false" alt="" role="presentation"
+                                                                src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1437!3i889!4i256!2m3!1e0!2sm!3i563290120!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=67073"
+                                                                style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+                                                        </div>
+                                                        <div
+                                                            style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;">
+                                                            <img draggable="false" alt="" role="presentation"
+                                                                src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1436!3i889!4i256!2m3!1e0!2sm!3i563290120!3m12!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!5f2&amp;key=AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k&amp;token=17106"
+                                                                style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gm-style-pbc"
+                                                style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;">
+                                                <p class="gm-style-pbt"></p>
+                                            </div>
+                                            <div
+                                                style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
+                                                <div
+                                                    style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+                                                    <div
+                                                        style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;">
+                                                    </div>
+                                                    <div
+                                                        style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;">
+                                                    </div>
+                                                    <div
+                                                        style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+                                                        <div title="" tabindex="-1"
+                                                            style="width: 43px; height: 59px; overflow: hidden; position: absolute; cursor: pointer; touch-action: none; left: -22px; top: -51px; z-index: 0;">
+                                                            <img alt=""
+                                                                src="https://maps.gstatic.com/mapfiles/transparent.png"
+                                                                draggable="false"
+                                                                style="width: 43px; height: 59px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><iframe aria-hidden="true" frameborder="0" tabindex="-1"
+                                            style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe>
+                                        <div
+                                            style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);">
+                                        </div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div><button draggable="false" aria-label="Toggle fullscreen view"
+                                                title="Toggle fullscreen view" type="button"
+                                                class="gm-control-active gm-fullscreen-control"
+                                                style="background: none rgb(255, 255, 255); border: 0px; margin: 10px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; display: none; top: 0px; right: 0px;"><img
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                                    alt="" style="height: 18px; width: 18px;"><img
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                                    alt="" style="height: 18px; width: 18px;"><img
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+                                                    alt="" style="height: 18px; width: 18px;"></button></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>
+                                            <div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom"
+                                                draggable="false" controlwidth="0" controlheight="0"
+                                                style="margin: 10px; user-select: none; position: absolute; display: none; bottom: 26px; left: 0px;">
+                                                <div class="gmnoprint" controlwidth="40" controlheight="40"
+                                                    style="display: none; position: absolute;">
+                                                    <div
+                                                        style="background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; width: 40px; height: 40px;">
+                                                        <button draggable="false" aria-label="Rotate map clockwise"
+                                                            title="Rotate map clockwise" type="button"
+                                                            class="gm-control-active"
+                                                            style="background: none; display: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; left: 0px; top: 0px; overflow: hidden; width: 40px; height: 40px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"></button>
+                                                        <div
+                                                            style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); display: none;">
+                                                        </div><button draggable="false"
+                                                            aria-label="Rotate map counterclockwise"
+                                                            title="Rotate map counterclockwise" type="button"
+                                                            class="gm-control-active"
+                                                            style="background: none; display: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; left: 0px; top: 0px; overflow: hidden; width: 40px; height: 40px; transform: scaleX(-1);"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M12.06%209.06l4-4-4-4-1.41%201.41%201.59%201.59h-.18c-2.3%200-4.6.88-6.35%202.64-3.52%203.51-3.52%209.21%200%2012.72%201.5%201.5%203.4%202.36%205.36%202.58v-2.02c-1.44-.21-2.84-.86-3.95-1.97-2.73-2.73-2.73-7.17%200-9.9%201.37-1.37%203.16-2.05%204.95-2.05h.17l-1.59%201.59%201.41%201.41zm8.94%203c-.19-1.74-.88-3.32-1.91-4.61l-1.43%201.43c.69.92%201.15%202%201.32%203.18H21zm-7.94%207.92V22c1.74-.19%203.32-.88%204.61-1.91l-1.43-1.43c-.91.68-2%201.15-3.18%201.32zm4.6-2.74l1.43%201.43c1.04-1.29%201.72-2.88%201.91-4.61h-2.02c-.17%201.18-.64%202.27-1.32%203.18z%22/%3E%3C/svg%3E"
+                                                                style="width: 20px; height: 20px;"></button>
+                                                        <div
+                                                            style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); display: none;">
+                                                        </div><button draggable="false" aria-label="Tilt map"
+                                                            title="Tilt map" type="button"
+                                                            class="gm-tilt gm-control-active"
+                                                            style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; top: 0px; left: 0px; overflow: hidden; width: 40px; height: 40px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"
+                                                                style="width: 18px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"
+                                                                style="width: 18px;"><img
+                                                                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2016%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2016h8V9H0v7zm10%200h8V9h-8v7zM0%207h8V0H0v7zm10-7v7h8V0h-8z%22/%3E%3C/svg%3E"
+                                                                style="width: 18px;"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div></div>
+                                        <div>
+                                            <div
+                                                style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;">
+                                                <a target="_blank" rel="noopener"
+                                                    href="https://maps.google.com/maps?ll=23.011902,72.50962&amp;z=11&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3"
+                                                    title="Open this area in Google Maps (opens a new window)"
+                                                    style="position: static; overflow: visible; float: none; display: inline;">
+                                                    <div style="width: 66px; height: 26px; cursor: pointer;"><img alt=""
+                                                            src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"
+                                                            draggable="false"
+                                                            style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div></div>
+                                        <div>
+                                            <div class="gmnoprint"
+                                                style="z-index: 1000001; position: absolute; right: 158px; bottom: 0px;">
+                                                <div draggable="false" class="gm-style-cc"
+                                                    style="user-select: none; height: 14px; line-height: 14px;">
+                                                    <div
+                                                        style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                                        <div style="width: 1px;"></div>
+                                                        <div
+                                                            style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                                        <button draggable="false" aria-label="Keyboard shortcuts"
+                                                            title="Keyboard shortcuts" type="button"
+                                                            style="background: none; display: inline-block; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: normal;">Keyboard
+                                                            shortcuts</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gmnoprint"
+                                                style="z-index: 1000001; position: absolute; right: 71px; bottom: 0px; width: 87px;">
+                                                <div draggable="false" class="gm-style-cc"
+                                                    style="user-select: none; height: 14px; line-height: 14px;">
+                                                    <div
+                                                        style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                                        <div style="width: 1px;"></div>
+                                                        <div
+                                                            style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                                        <button draggable="false" aria-label="Map Data" title="Map Data"
+                                                            type="button"
+                                                            style="background: none; display: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: normal;">Map
+                                                            Data</button><span>Map data ©2021</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gmnoprint gm-style-cc" draggable="false"
+                                                style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;">
+                                                <div
+                                                    style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+                                                    <div style="width: 1px;"></div>
+                                                    <div
+                                                        style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;">
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+                                                    <a href="https://www.google.com/intl/en-US_US/help/terms_maps.html"
+                                                        target="_blank" rel="noopener"
+                                                        style="text-decoration: none; cursor: pointer; color: rgb(0, 0, 0);">Terms
+                                                        of Use</a>
+                                                </div>
+                                            </div>
+                                            <div class="gmnoscreen"
+                                                style="position: absolute; right: 0px; bottom: 0px;">
+                                                <div
+                                                    style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">
+                                                    Map data ©2021</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="snippetTextSection">
+                                <input name="isJitBooking" type="hidden" value="false">
+                                <input name="zap_lat" type="hidden" value="23.011902">
+                                <input name="zap_lng" type="hidden" value="72.50962">
+                                <input name="zap_radius" type="hidden" value="">
+                                <p class="snippetText" style="width: 100%;">
+                                    Prahlad Nagar Garden
+                                </p>
+                                <div class="helpIcon hide" data-lat="23.011902" data-lng="72.50962" data-toggle="modal">
+                                    ?
+                                </div>
+                            </div>
+                        </div>
+                        <!-- removed in new design of sidebar -->
+                        <div class="row p-t20 p-b20 amountDiv" id="amountDiv" style="display: none">
+                            <div class="col-md-12 m-b10 size-14 f-w100" id="tariffDiv">
+                                Tariff
+                                <!-- %span.help.size-12.pointer.questionMark{'data-placement' => "bottom", 'data-toggle' => "tooltip", 'data-html' => 'true', 'data-title' => "Tariff Calculator"} -->
+                                <!-- (?) -->
+                                <div class="right-col">
+                                    ₹ 4,354
+                                </div>
+                            </div>
+                            <div class="col-md-12 f-w100" id="securityDiv">
+                                Refundable Deposit
+                                <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                                    data-title="Fully refundable security deposit which will be released once your booking is over. It will take 3-5 days before the refund reflects in your account."
+                                    data-toggle="tooltip" data-original-title="" title="">
+                                    (?)
+                                </span>
+                                <div class="right-col securityTotal">
+                                    ₹ 1,299
+                                </div>
+                            </div>
+                        </div>
+                        <!-- removed in new design of sidebar -->
+                        <div class="border-t-c border-b-c p-t20 p-b20 size-16 f-w600 payable_green_bg totalDiv"
+                            id="totalDiv" style="display: none">
+                            <div class="col-md-12">
+                                PAYABLE AMOUNT
+                                <div class="right-col" id="sidebarAmount">
+                                    <span class="m-r5">₹</span>
+                                    5,653
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-b-c p-t20 p-b20">
+                            <div class="col-md-12 m-b10 size-14 f-w100">
+                                Free Km
+                                <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                                    data-title="All zoomcar reservations come with free driving km, which are based on selected free km package and reservation duration."
+                                    data-toggle="tooltip" data-original-title="" title="">
+                                    (?)
+                                </span>
+                                <div class="right-col">
+                                    180.0
+                                    Km
+                                </div>
+                            </div>
+                            <div class="col-md-12 m-b10 size-14 f-w100">
+                                Excess Km
+                                <span class="help size-12 pointer questionMark" data-html="true" data-placement="bottom"
+                                    data-title="If you travel more than 180.0 Km during the reservation, then all km above 180.0 will be charged at this price."
+                                    data-toggle="tooltip" data-original-title="" title="">
+                                    (?)
+                                </span>
+                                <div class="right-col">
+                                    ₹ 13/km
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-t20 p-b10">
+                            <div class="col-md-12 t-c size-14">
+                                <p>FARE INCLUDES</p>
+                            </div>
+                        </div>
+                        <div class="row d-f jc-c">
+                            <div class="col-xs-4">
+                                <div class="insurance_image"></div>
+                                <p class="t-c f-w100 size-12 p-b10">
+                                    INSURANCE
+                                </p>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="taxes_image"></div>
+                                <p class="t-c f-w100 size-12 p-b10">
+                                    TAXES
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var googleMapKey = "AIzaSyDvwYfKKdchtJ2zoATMzZM4h5CIZxlFf0k";
+                        var is_normal_search = true;
+                        document.addEventListener('DOMContentLoaded', function () {
+                            if (is_normal_search && !isMobile() && (typeof google === 'undefined' || typeof google.maps === 'undefined')) {
+                                // load the google maps script and call teh callback function
+                                var script = document.createElement("script");
+                                script.type = "text/javascript";
+                                script.src = "https://maps.googleapis.com/maps/api/js?key=" + googleMapKey + "&libraries=places&callback=initZapMapSnippet";
+                                document.body.appendChild(script);
+                            }
+                        })
+
+                        function checkjQuery() {
+                            if (window.jQuery) {
+                                $('.helpIcon').on('click', function (event) {
+                                    initZapMapModal(event.target, new Date(1626951600 * 1000));
+                                })
+                            }
+                            else {
+                                setTimeout(checkjQuery, 1000);
+                            }
+                        }
+                        checkjQuery();
+                    </script>
+
+                </div>
+                <div class="fc"></div>
+                <br>
+                <br>
+                <div class="fc"></div>
+                <br>
+            </div>
+        </div>
+        <script id="hd_address" type="text/template">
+    <div class='address_fields hd_addressBox'>
+    <div class='active_hd_tick hide'></div>
+    <div class='size-14 address_inner_field'>
+    <div class='hd_address'></div>
+    <div class='hd_locality'></div>
+    <div>
+    <span class='hd_city fl'></span>
+    <span class='fl'>
+    &nbsp;-
+    <span class='hd_zipcode'></span>
+    </span>
+    </div>
+    <div class='fc p-t10'>
+    <span class='fl'>Landmark -&nbsp</span>
+    <div class='hd_landmark fl'></div>
+    </div>
+    </div>
+    <div class='hd_edit_delete fr'>
+    <a class='hd_edit fl' data-toggle='modal'>
+    Edit
+    </a>
+    <a class='hd_delete fl border-l-c'>
+    Delete
+    </a>
+    </div>
+    </div>
+    </script>
+        <script>
+            if (false) {
+                window.location = '/';
+            }
+            //booking timer object
+            var bookingTimer;
+            var sessionTimeout = false;
+            var checkoutCounter = 0;
+            // defining few global variables for promo functionality in vue
+            // this is temperory till we migrate to vuejs completely
+            // then we will have proper APIs to manage the calculations
+            // 																- Anchal
+            promo_code = "" || "";
+            promo_valid = "";
+            promo_code_expired = promo_valid == "true" ? '' : "";
+            discount_amount = 0 || 0;
+            total = parseInt("4354.0");
+            deposit = parseInt("1299");
+            no_deposit = false;
+            if (no_deposit)
+                deposit = 0;
+
+            var checkOut = function () {
+                pushEvent('Checkout', 'Checkout', 'Y');
+                Segment.trackEvent('Link Clicked', {
+                    id: 'AutoApply_Promo_Payment',
+                    current_url: window.location.href,
+                    city: cityLinkName,
+                    user_id: (typeof userEmail !== 'undefined') ? userEmail : null,
+                    is_autoapply: promo_code.length > 0 ? true : false,
+                    location: $('#LocationVal').val()
+                });
+
+                if (sessionTimeout) return;
+
+                if (new CookieModule().getCookie('abtestch20') !== "" && !isMobile()) {
+                    // pause the timer on checkout button click
+                    bookingTimer.pauseTimer();
+                }
+
+                var checkout = document.getElementById('checkoutButton')
+                    , checkoutHDStatus = checkout.dataset.status
+                    , checkoutCDStatus = checkout.dataset.cd;
+
+                var locality = "";
+                if (checkoutCounter > 0) {
+                    return false
+                }
+
+                if ($('#newArea').data('readonly') === false) {
+                    locality = $('#newArea').val();
+                }
+                var zipcode = "";
+
+                if (checkoutCDStatus === "0") {
+                    zipcode = $("#newZipcode").val();
+                }
+
+                // defining the function outside the below as in firefox these were not getting read
+                // and were giving JS error.
+                function appendHdInputs(name, id) {
+                    var hd_input = document.createElement('input');
+                    hd_input.setAttribute('type', 'hidden');
+                    hd_input.setAttribute('name', name);
+                    hd_input.setAttribute('value', document.getElementById(id).value);
+                    document.getElementById('CheckoutForm').appendChild(hd_input);
+                }
+
+                function appendHdValues(name, value) {
+                    var hd_input = document.createElement('input');
+                    hd_input.setAttribute('type', 'hidden');
+                    hd_input.setAttribute('name', name);
+                    hd_input.setAttribute('value', value);
+                    document.getElementById('CheckoutForm').appendChild(hd_input);
+                }
+
+                if (checkoutHDStatus === "0" || checkoutCDStatus === "0") {
+                    var fieldsArray = ['newAddress', 'newArea', 'newLandmark', 'newZipcode'];
+                    if (hdFormValidation(fieldsArray, 'newZipcode', 'newLandmark')) {
+                        appendHdInputs('address', 'newAddress');
+                        appendHdValues('locality', locality);
+                        appendHdValues('zipcode', zipcode);
+                        appendHdValues('user_city', "ahmedabad");
+                        var addType = '';
+                        if (typeof $('input[name="addressType"]:checked').val() !== "undefined") {
+                            addType = $('input[name="addressType"]:checked').val();
+                        }
+                        appendHdValues('add_type', addType);
+                        appendHdInputs('landmark', 'newLandmark');
+
+                        function appendHdInputs(name, id) {
+                            var hd_input = document.createElement('input');
+                            hd_input.setAttribute('type', 'hidden');
+                            hd_input.setAttribute('name', name);
+                            hd_input.setAttribute('value', document.getElementById(id).value);
+                            document.getElementById('CheckoutForm').appendChild(hd_input);
+                        }
+
+                        function appendHdValues(name, value) {
+                            var hd_input = document.createElement('input');
+                            hd_input.setAttribute('type', 'hidden');
+                            hd_input.setAttribute('name', name);
+                            hd_input.setAttribute('value', value);
+                            document.getElementById('CheckoutForm').appendChild(hd_input);
+                        }
+
+                        // submit form
+                        checkoutCounter++;
+                        checkout.style.backgroundColor = '#9b9b9b';
+                        checkout.style.cursor = 'text';
+                        $('#CheckoutForm').submit();
+                    }
+                    else {
+                        // submit form
+                        return false;
+                    }
+                }
+
+                else if (checkoutHDStatus === "1" || checkoutCDStatus === "1") {
+                    var element = document.getElementById("user_address_id");
+                    if (element !== null) {
+                        element.parentNode.removeChild(element);
+                    }
+
+                    var x = document.getElementsByClassName('active_hd_add');
+
+                    var hd_input = document.createElement('input');
+                    hd_input.setAttribute('id', 'user_address_id');
+                    hd_input.setAttribute('type', 'hidden');
+                    hd_input.setAttribute('name', 'user_address_id');
+                    hd_input.setAttribute('value', x[0].dataset.id);
+                    document.getElementById('CheckoutForm').appendChild(hd_input);
+
+                    var hd_input = document.createElement('input');
+                    hd_input.setAttribute('type', 'hidden');
+                    hd_input.setAttribute('name', 'add_type');
+                    hd_input.setAttribute('value', $('input[name="addressType"]').val());
+                    document.getElementById('CheckoutForm').appendChild(hd_input);
+                    // submit form
+                    checkoutCounter++;
+                    checkout.style.backgroundColor = '#9b9b9b';
+                    checkout.style.cursor = 'text';
+                    $('#CheckoutForm').submit();
+                }
+                else if (checkoutHDStatus === "noHD" || checkoutCDStatus === "noCD") {
+                    // submit form
+                    checkoutCounter++;
+                    checkout.style.backgroundColor = '#9b9b9b';
+                    checkout.style.cursor = 'text';
+                    $('#CheckoutForm').submit();
+                }
+            }
+            var flag = true;
+            var test = "";
+            var details;
+            var _adx = {};
+            _adx.xb = '35BDU410';
+            _adx.xt = 'conversion';
+            _adx.xgid = '6AMDq23';
+            (function (d) {
+                var x = d.createElement('script');
+                x.async = true;
+                x.src = 'https://d1adj61x0fgvmc.cloudfront.net/dxjet.js';
+                var s = d.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(x, s);
+            })(document);
+
+            // include facebook sdk for fshare
+
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '194504380711275',
+                    status: true,
+                    cookie: true,
+                    xfbml: true
+                });
+            };
+            /*(function() {
+                  var e = document.createElement('script');
+                  e.async = true;
+                  e.src = 'https://connect.facebook.net/en_US/all.js';
+                  if(document.getElementById('fb-root') !== null)
+                      document.getElementById('fb-root').appendChild(e);
+            }());*/
+
+            var deposit_final
+                , wallet_amount = 0
+                , booking_security_amount = 1299
+                , wallet_available = 0
+                , tariff = 4354.0
+                , hdcharge = 0
+                , terminal_fee = 0
+                , total_payable_amount = booking_security_amount - wallet_available + tariff + hdcharge + terminal_fee;
+
+            function commaSeparateNumber(val) {
+                while (/(\d+)(\d{3})/.test(val.toString())) {
+                    val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+                }
+                return val;
+            }
+
+            function check() {
+                if (document.getElementById("newsletter").checked == true) {
+                    pushEvent('Deals checkout page', 'Sign up newletter', 'Y');
+                    newsletter_signup("utkarshnagar79@gmail.com");
+                }
+            }
+
+            function checkOut() {
+                pushEvent('Checkout', 'Checkout', 'Y');
+                check();
+            }
+
+            function trackKnowMore() {
+                analytics.track('Link Clicked', {
+                    category_id: 'Know_More_Checkout'
+                });
+            }
+
+            function no_security() {
+                if (false) {
+                    document.body.style.overflow = "hidden"
+                    document.getElementsByClassName('no_security_dialog')[0].style.top = document.getElementById('securityAmount').getBoundingClientRect()
+                    document.getElementsByClassName('no_security_dialog')[0].style.left = document.getElementById('securityAmount').getBoundingClientRect()
+                    document.getElementsByClassName('no_security_dialog_overlay')[0].classList.remove('hide')
+                    document.getElementsByClassName('no_security_dialog')[0].classList.remove('hide')
+                }
+            }
+
+            function remove_no_security() {
+                document.body.style.overflow = "auto"
+                document.getElementsByClassName('no_security_dialog_overlay')[0].hidden = true
+                document.getElementsByClassName('no_security_dialog')[0].hidden = true
+                document.getElementsByClassName('no_security_dialog_close')[0].hidden = true
+            }
+
+            function hdFormValidation(fieldsArray, zipcode, landmark) {
+                var checkEmpty = true,
+                    checkZipcode = true,
+                    emptyFields = [],
+                    emptyFieldsString = "",
+                    zipcodeString = "Please enter a 6-digit Pincode. ",
+                    checkout = document.getElementById('checkoutButton'),
+                    checkoutHDStatus = checkout.dataset.status,
+                    checkoutCDStatus = checkout.dataset.cd;
+
+                zipcode = '#' + zipcode;
+
+                landmark = '#' + landmark;
+                for (var i = 0; i < fieldsArray.length; i++) {
+                    if ($('#' + fieldsArray[i]).val() === "") {
+                        $('#' + fieldsArray[i]).css('border-color', '#e2060a');
+                        var field = fieldsArray[i].slice(3);
+                        // push event related code //
+                        if (checkoutHDStatus !== "noHD") {
+                            pushEvent('DS Monitoring', 'Address Error', field);
+                        }
+                        else if (checkoutCDStatus !== "noCD") {
+                            pushEvent('Chauffeur Checkout', 'Address Error', field);
+                        }
+
+                        checkEmpty = false;
+                        if (emptyFieldsString !== "") {
+                            emptyFieldsString += ", "
+                        }
+                        emptyFieldsString += $('#' + fieldsArray[i]).attr('placeholder');
+                    }
+                    else {
+                        $('#' + fieldsArray[i]).css('border-color', '#ccc');
+                    }
+                }
+
+                if ($(landmark).val().length === 0) {
+                    $('.landmarkError').removeClass('hide');
+                }
+                else {
+                    $('.landmarkError').addClass('hide');
+                }
+
+                if ($(zipcode).val().length !== 6) {
+                    checkZipcode = false;
+                    $(zipcode).val("");
+                    $('.pinError').removeClass('hide');
+                    // push event related code //
+                    if (checkoutHDStatus !== "noHD") {
+                        pushEvent('DS Monitoring', 'Address Error', 'Zipcode');
+                    }
+                    else if (checkoutCDStatus !== "noCD") {
+                        pushEvent('Chauffeur Checkout', 'Address Error', 'Zipcode');
+                    }
+                }
+                else {
+                    $('.pinError').addClass('hide');
+                }
+
+                if (checkEmpty && checkZipcode) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+            function checkJquery_checkouta() {
+                if (window.jQuery) {
+
+                    let email = "utkarshnagar79@gmail.com" || " ";
+                    let cargroupId = "90" || " ";
+                    if (typeof (dataLayer) != 'undefined') {
+                        dataLayer.push({
+                            'event': 'Checkout Result',
+                            'userEmail': email,
+                            'cargroupId': cargroupId
+                        })
+                    }
+
+                    // no security banner to be shown for loyal customers
+                    var cookieModule = new CookieModule();
+                    if (cookieModule.getCookie('nosecurity') !== "seen") {
+                        no_security()
+                    }
+
+                    // code to re-render addresses when going back from payment to checkout
+                    if ("" === "true" || "false" === "true") {
+                        if (sessionStorage.getItem('BackToCheckout') !== null) {
+                            renderAddresses('last');
+                        }
+                    }
+
+                    // chauffer drive and hd new address related code //
+                    if ($('#newZipcode').data("readonly")) {
+                        $('#newZipcode').attr("readonly", true);
+                    }
+                    if ($('#addZipcode').data("readonly")) {
+                        $('#addZipcode').attr("readonly", true);
+                    }
+                    if ($('#hdEnable').val() == "1") {
+                        pushEvent('DS Monitoring', 'Checkout page', 'Doorstep');
+                    }
+                    else {
+                        pushEvent('DS Monitoring', 'Checkout page', 'Pickup');
+                    }
+                    $('#homeDelivery').removeAttr("disabled");
+
+                    if ($('#changeDeposit').is(':checked')) {
+                        $('#DepositMessage').hide();
+                    }
+                    if ($('#newArea').data('readonly')) {
+                        $('#newArea').attr('readonly', 'readonly');
+                    }
+                    if ($('#addArea').data('readonly')) {
+                        $('#newArea').attr('readonly', 'readonly');
+                    }
+
+                    // start the timer on page load
+
+                    if (new CookieModule().getCookie('abtestch20') !== "" && !isMobile()) {
+
+                        bookingTimer = new BookingTimer();
+                        bookingTimer.setInitialTime(20);
+                        bookingTimer.setTimer(2);
+                        sessionStorage.removeItem('timerInfo');
+                        //bookingTimer.bindWindowBlurFocus();
+
+                    }
+
+                    $(document).on('click', '#editSaveAddress', function () {
+                        var fieldsArray = ['editAddress', 'editArea', 'editLandmark', 'editZipcode'];
+
+                        if (hdFormValidation(fieldsArray, 'editZipcode', 'editLandmark')) {
+                            var address_id = $('#editSaveAddress').attr("data-id")
+                                , address = $('#editAddress').val()
+                                , locality = $('#editArea').val()
+                                , landmark = $('#editLandmark').val()
+                                , zipcode = $('#editZipcode').val()
+                                , addType = ($('#editAddressType').data('addtype') !== "" ? $('#editAddressType').data('addtype') : '')
+                                , user_city = "Ahmedabad"
+                                , platform = 'web'
+                                , auth_token = 'p3Ga7YxgF2L5YVPCmQgd';
+
+                            $.ajax({
+                                url: 'https://www.zoomcar.com/user_addresses/update',
+                                data: {
+                                    address: address,
+                                    locality: locality,
+                                    user_city: user_city,
+                                    landmark: landmark,
+                                    zipcode: zipcode,
+                                    address_id: address_id,
+                                    add_type: addType,
+                                    platform: platform,
+                                    auth_token: auth_token
+                                },
+                                dataType: "json",
+                                type: "POST",
+                                ContentType: "application/json"
+                            })
+                                .done(function (json) {
+                                    if (json.status === "1") {
+                                        $('#hd_edit_address').modal('hide');
+                                        renderAddresses(address_id);
+                                    }
+                                })
+                                .fail(function (json) {
+                                    alert(json.statusText);
+                                });
+                        }
+                    });
+
+                    $(document).on('click', '#addSaveAddress', function () {
+                        var fieldsArray = ['addAddress', 'addArea', 'addLandmark', 'addZipcode'];
+                        var locality = "";
+                        var zipcode = "";
+                        var lat = "";
+                        var lng = "";
+
+                        if (!$('#newArea').data('readonly')) {
+                            locality = $('#newArea').val();
+                        }
+                        if (!$('#addArea').data('readonly')) {
+                            locality = $('#addArea').val();
+                        }
+                        if (!$('#newZipcode').data('readonly')) {
+                            zipcode = $('#newZipcode').val();
+                        }
+                        if (!$('#addZipcode').data('readonly')) {
+                            zipcode = $('#addZipcode').val();
+                        }
+
+                        if (hdFormValidation(fieldsArray, 'addZipcode', 'addLandmark')) {
+                            var addAddress = $('#addAddress').val()
+                                , addLandmark = $('#addLandmark').val()
+                                , addLocality = locality
+                                , addZipcode = zipcode
+                                , addlat = lat
+                                , addlng = lng
+                                , addCity = $(this).data("city")
+                                , platform = 'web'
+                                , auth_token = 'p3Ga7YxgF2L5YVPCmQgd';
+                            var addType = '';
+                            if (typeof $('input[name="addressType"]:checked').val() !== "undefined") {
+                                addType = $('input[name="addressType"]:checked').val();
+                            }
+
+                            $.ajax({
+                                type: "POST",
+                                url: "https://www.zoomcar.com/user_addresses",
+                                dataType: "json",
+                                data: {
+                                    address: addAddress,
+                                    user_city: addCity,
+                                    landmark: addLandmark,
+                                    zipcode: addZipcode,
+                                    locality: addLocality,
+                                    add_type: addType,
+                                    lat: addlat,
+                                    lng: addlng,
+                                    platform: platform,
+                                    auth_token: auth_token
+                                }
+                            })
+                                .done(function (json) {
+                                    if (json.status === "1") {
+                                        $('#hd_new_address').modal('hide');
+                                        renderAddresses('last');
+                                    }
+                                })
+                                .fail(function (json) {
+                                    alert(json.statusText);
+                                });
+                        }
+                    });
+
+                    $(document).on('click', '#addNewAddress', function () {
+                        var _this = $(this);
+                        var locality = "";
+                        var zipcode = "";
+                        if ($('#hd_new_address #addArea').data('readonly') === true) {
+                            $('#hd_new_address #addArea').attr('readonly', 'readonly');
+                        }
+                        $('#hd_new_address #addArea').val(locality);
+                        $('#hd_new_address #addZipcode').val(zipcode);
+                    });
+
+
+                    if (null != null && null == true) {
+                        if (test != "") {
+                            pushEvent('Deals', 'No Inventory');
+                        } else {
+                            pushEvent('Checkout', 'No Inventory');
+                        }
+                    }
+                    var finalAmount = $('#final_amount_to_pay').html();
+                    var deal_amount = $('#deal_discount').html();
+                    $('#changeDeposit').removeAttr("disabled");
+                    $('#useExtWallet').removeAttr("disabled");
+                    $('#sidebarAmount').html("₹" + finalAmount);
+                    $('#sidebar_deal_discount').html(deal_amount)
+
+                    $('#showWalletDiv').hide();
+                    var credits = 0;
+
+                    $('#changeDeposit').change(function () {
+                        var $el = $(this);
+
+                        var credits_old = 0;
+                        var promo_old = $("#promoAmount").text();
+                        credits_old = getValue(credits_old);
+                        promo_old = getValue(promo_old);
+
+                        var credits_new = 0;
+                        var promo_new = $("#promoAmount").text();
+                        credits_new = getValue(credits_new);
+                        promo_new = getValue(promo_new);
+                        if ($el.is(':checked')) {
+                            $('#checkoutDeposit').val("1");
+                            $('#DepositMessage').hide();
+                            total_payable_amount = booking_security_amount - wallet_available + tariff + hdcharge + terminal_fee - parseInt(discount_amount);
+                            pushEvent('Checkout', 'Defer Deposit', 'Checked');
+                        }
+                        else {
+                            $('#checkoutDeposit').val("0");
+                            $('#DepositMessage').show();
+                            total_payable_amount = tariff + hdcharge + terminal_fee - parseInt(discount_amount);
+                            pushEvent('Checkout', 'Defer Deposit', 'Unchecked');
+                        }
+                        updateFinalAmountOnPaymentPage(total_payable_amount)
+
+                        //updateCheckoutAmount(credits_new, credits_old, promo_new, promo_old);
+
+                    });
+
+                    $('#changePreauth').on('change', function () {
+                        var $el = $(this);
+                        if ($el.is(':checked')) {
+                            $('#checkoutPreauth').val("1");
+                            total_payable_amount = tariff + hdcharge + terminal_fee - parseInt(discount_amount);
+                            $('#sd-preauth').addClass('strike_out');
+                            analytics.track('Link Clicked', {
+                                category_id: 'Pre-Auth_Checkout_Selected'
+                            });
+                        } else {
+                            $('#checkoutPreauth').val("0");
+                            total_payable_amount = booking_security_amount - wallet_available + tariff + hdcharge + terminal_fee - parseInt(discount_amount);
+                            $('#sd-preauth').removeClass('strike_out');
+                            analytics.track('Link Clicked', {
+                                category_id: 'Pre-Auth_Payment_deselected'
+                            });
+                        }
+
+                        updateFinalAmountOnPaymentPage(total_payable_amount)
+                    });
+
+                    var preauth = $('#changePreauth');
+                    if (preauth) {
+                        preauth.trigger('change');
+                    }
+                    /*$('#useExtWallet').change(function() {
+                        var $el = $(this);
+          
+                        var credits_old = $("#creditsUsed").text();
+                        var promo_old = $("#promoAmount").text();
+                        credits_old = getValue(credits_old);
+                        promo_old = getValue(promo_old);
+          
+                        var credits_new = 0;
+                        var promo_new = $("#promoAmount").text();
+                        credits_new = getValue(credits_new);
+                        promo_new = getValue(promo_new);
+          
+                        updateCheckoutAmount(credits_new, credits_old, promo_new, promo_old);
+                    });*/
+
+                    if (!($("#credits_block").length)) {
+                        $("#applyPromoCode").css("display", "none");
+                        $("#promo_without_credits").css("display", "inline-block");
+                        $('#applyPromoCode_withoutCredits').click(function () {
+                            $('#promoCode').toggle();
+                            $('#credits_block').toggle();
+                            if ($.trim($(this).text()) === 'Apply Promo Code') {
+                                $(this).text('Hide Promo Code');
+                            } else {
+                                $(this).text('Apply Promo Code');
+                            }
+                        });
+                    }
+
+                    $(document).on('click', '.apply_promocode_btn', function () {
+                        $("body").addClass("promoCodeClass");
+                        $(".applyCodeText").css("display", "none");
+                    });
+
+                    $(document).on('click', '.promoCodeCancelBtn', function () {
+                        $("body").removeClass("promoCodeClass");
+                        if ($(".creditUseClass").length) {
+                            $(".applyCodeText").css("display", "none");
+                        } else {
+                            $(".applyCodeText").css("display", "inline-block");
+                        }
+                    });
+
+                    $(document).on('click', '.use-credits-submit', function () {
+                        $(".wrapper").addClass('creditUseClass');
+                        $(".applyCodeText").css("display", "none");
+
+                    });
+
+                    $(document).on('click', '.cancelCreditsBtn', function () {
+                        $(".wrapper").removeClass("creditUseClass");
+                        if ($(".promoCodeClass").length) {
+                            $(".applyCodeText").css("display", "none");
+                        } else {
+                            $(".applyCodeText").css("display", "inline-block");
+                        }
+                    });
+
+                    $('#applyPromoCode').click(function () {
+                        $('#promoCode').toggle();
+                        $('#credits_block').toggle();
+                        if ($.trim($(this).text()) === 'Apply Promo Code or Use Credits') {
+                            $(this).text('Hide Promo Code and Credits Options');
+                        } else {
+                            $(this).text('Apply Promo Code or Use Credits');
+                        }
+                    });
+
+                    $('#responsive_applyPromoCode').click(function () {
+                        $('#promoCode').toggle();
+                        $('#credits_block').toggle();
+                        if ($.trim($('#applyPromoCode').text()) === 'Apply Promo Code or Use Credits') {
+                            $('#applyPromoCode').text('Hide Promo Code and Credits Options');
+                        } else {
+                            $('#applyPromoCode').text('Apply Promo Code or Use Credits');
+                        }
+                        if ($.trim($('#applyPromoCode_withoutCredits').text()) === 'Apply Promo Code') {
+                            $('#applyPromoCode_withoutCredits').text('Hide Promo Code');
+                        } else {
+                            $('#applyPromoCode_withoutCredits').text('Apply Promo Code');
+                        }
+                    });
+
+                    $('#proceedToPayment').click(function () {
+                        $('#proceedToPayment').hide();
+                    });
+
+                    $('#viewTariffDetails').click(function () {
+                        $('#proceedToPayment').show();
+                    });
+                }
+                else {
+                    window.setTimeout(checkJquery_checkouta, 1000);
+                }
+            }
+
+            checkJquery_checkouta();
+        </script>
+
+    </div>
+</body>
+
+</html>

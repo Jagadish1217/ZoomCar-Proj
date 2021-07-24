@@ -1,0 +1,510 @@
+body {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            margin: 20px 60px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #progress_head {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        #progress_head #progress_bar {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 595px;
+        }
+
+        #progress_bar #item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 110px;
+        }
+
+        #progress_bar #item .circle.selected {
+            border-color: rgb(112, 173, 77);
+            background-color: rgb(112, 173, 77);
+        }
+
+        #progress_bar #item .circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid rgb(189, 189, 189);
+            position: relative;
+            background-color: rgb(255, 255, 255);
+        }
+
+       #progress_bar #item #green_position {
+            width: 150px;
+            text-align: center;
+        }
+
+        #progress_bar #item .green_position:after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 67px;
+            width: 218px;
+            height: 1px;
+            background-color: rgb(189, 189, 189);
+        }
+
+        #progress_head #homepage {
+            align-self: center;
+            cursor: pointer;
+        }
+
+        #progress_bar #item .circle.selected:after {
+            border-color: rgb(112, 173, 77);
+            background-color: hsl(0, 0%, 100%);
+        }
+
+        #progress_bar #item .circle:after {
+            content: "";
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            border: 1px solid rgb(189, 189, 189);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+        }
+
+        #location_form {
+    flex: 1;
+    flex-grow: 60;
+}
+#location_heading {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+#locationFinder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 14;
+}
+
+.locationInput.active {
+    border: .5px solid #70ad4d;
+}
+.locationInput {
+    width: 628px;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: -1.5px 2.5px 7.5px 0 rgb(0 0 0 / 20%);
+    border: .5px solid #70ad4d;
+    display: flex;
+    flex-direction: row;
+}
+.dropdown {
+    border-right: 1px solid #70ad4d;
+}
+.dropdown {
+    position: relative;
+    width: 175px;
+    height: 48px;
+    line-height: 48px;
+    border-right: 1px solid #70ad4d;
+    cursor: pointer;
+}
+#choosed {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    color: #33414f;
+    font-size: 20px;
+    cursor: pointer;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dropdown #selectedCity {
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#choosed span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #323a44;
+    top: 21px;
+    right: 10px;
+}
+#searches {
+    width: 400px;
+    text-indent: 10px;
+    height: 48px;
+    border: none;
+    font-size: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#searches1 {
+    width: 400px;
+    text-indent: 10px;
+    height: 48px;
+    border: none;
+    font-size: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.live_location {
+    position: relative;
+}
+.locate {
+    width: 68px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.locate>img {
+    width: 14px;
+    height: 14px;
+    opacity: .5;
+}
+#labelled {
+    font-size: 10px;
+    color: #9b9b9b;
+}
+#map {
+    color: #9b9b9b;
+    text-decoration: underline;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* creating overlay */
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 20;
+  cursor: pointer;
+}
+
+#window {
+    width: 50%;
+    height: 80%;
+    box-shadow: 0 3px 15px 0 rgb(0 0 0 / 35%);
+    background: #fff;
+    position: relative;
+    margin: 5% 25%;
+}
+
+#paddings{
+    padding: 20px;
+}
+/* creating overlay */
+.oneway-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #000;
+}
+.toggle {
+    margin-left: 15px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 14px;
+}
+.switch input {
+    display: none;
+}
+.component-toggle .slider.round {
+    border-radius: 17px;
+}
+.component-toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.component-toggle .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: -2px;
+    bottom: -2px;
+    background-color: #f1f1f1;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 24%), 0 0 1px 0 rgb(0 0 0 / 12%);
+}
+.component-toggle .slider.round:before {
+    border-radius: 50%;
+}
+.component-toggle input:checked+.slider {
+    background-color: #addba5;
+}
+.component-toggle .slider.round {
+    border-radius: 17px;
+}
+.component-toggle input:checked+.slider:before {
+    background-color: #57b54c;
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+.component-location .locationFinder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 14;
+}
+.component-location-finder {
+    position: relative;
+}
+.searchHelper {
+    display: flex;
+    flex-direction: row;
+}
+.component-popular-locations {
+    margin-top: 35px;
+}
+.heading {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.items {
+    opacity: .8;
+    padding: 5px 0;
+    cursor: pointer;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-indent: 10px;
+    margin-left: -10px;
+    border: 2px solid transparent;
+}
+.airport {
+    position: absolute;
+    bottom: 82px;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+.component-airport .airport-terminals-container {
+    margin: 5px 5px 10px 50px;
+    display: flex;
+}
+.terminals {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 7px;
+}
+.component-airport .airport-terminals-container .terminals .heading {
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: 100;
+}
+.terminals .heading .heading-airport-name {
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.terminals .terminal {
+    padding: 10px;
+    border: 1px solid #323a44;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+    overflow: hidden;
+}
+.faq {
+    flex: 1;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 80px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.component-breadcrumb {
+    width: 100%;
+    height: 82px;
+    bottom: 0;
+    left: 0;
+    background-color: #414f5e;
+    position: absolute;
+    z-index: 2;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+.breadcrumb .item {
+    width: 300px;
+    padding: 0 80px;
+    height: 90px;
+    cursor: pointer;
+    position: relative;
+}
+.breadcrumb .item:first-child {
+    padding-left: 60px;
+}
+.component-breadcrumb .breadcrumb .item.selected, .component-breadcrumb .breadcrumb .item.selected:after {
+    background-color: #33414f;
+}
+.breadcrumb .item .name {
+    color: #bdbdbd;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0 2px;
+}
+.breadcrumb .item .default {
+    color: #bdbdbd;
+    font-style: italic;
+    font-size: 12px;
+}
+.breadcrumb .item.selected:after {
+    background-color: #33414f;
+}
+.breadcrumb .item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -43px;
+    width: 90px;
+    height: 90px;
+    transform: scaleX(-.3) scaleY(.707) rotate(
+-45deg
+);
+    -ms-transform: scaleX(-.3) scaleY(.707) rotate(-45deg);
+    -moz-transform: scaleX(-.3) scaleY(.707) rotate(-45deg);
+    -webkit-transform: scaleX(-.3) scaleY(.707) rotate(
+-45deg
+);
+    -o-transform: scaleX(-.3) scaleY(.707) rotate(-45deg);
+    z-index: 1;
+    background-color: #414f5e;
+    border-left: 1px solid #bdbdbd;
+    border-radius: 5px 0 50px 6px;
+    border-top: 1px solid #bdbdbd;
+    font-weight: 700;
+    font-size: 22px;
+}
+.actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 60px;
+    border: 2px dashed red;
+}
+.proceed {
+    padding: 10px 60px;
+    background-color: #70ad4d;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: 50px;
+    position: relative;
+}
+.proceed {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #bdbdbd;
+    font-weight: 600;
+    cursor: pointer;
+}
+.component-popular-locations .items.picked {
+    padding: 5px 0;
+    border-radius: 4px;
+}
+.component-popular-locations .items.picked:after {
+    top: -20px;
+    right: -26px;
+}
+
+
+.picked {
+    border: 2px solid #70ad4d!important;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 18%);
+    position: relative;
+}
+#next{
+    width: 300px;
+    height: 80px;
+    border: 5px dashed red;
+    float: right;
+}
+
+ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 160px;
+            top: 48px;
+            left: 0;
+            border: 1px solid #bdbdbd;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+            max-height: 270px;
+            overflow: auto;
+            z-index: 15;
+        }
+
+        li {
+            text-indent: 10px;
+            cursor: pointer;
+            border-top: 1px solid #bdbdbd;
+        }
+
+        li:first-child {
+            border: 0;
+        }
