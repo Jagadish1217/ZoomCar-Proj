@@ -16,15 +16,15 @@
     <!-- Progress Bar Header-->
     <div id="progress_head">
         <div id="progress_bar">
-            <div id="item">
+            <div class="item">
                 <div class="circle selected"></div>
                 <div class="green_position">Starting Point</div>
             </div>
-            <div id="item">
+            <div class="item">
                 <div class="circle"></div>
                 <div class="green_position">Pickup Time</div>
             </div>
-            <div id="item">
+            <div class="item">
                 <div class="circle"></div>
                 <div id="green_position">Dropoff Time</div>
             </div>
@@ -90,7 +90,6 @@
         </div>
 
         <div class="searchHelper">
-            <!---->
             <div class="component-popular-locations">
                 <div class="heading">Popular Pick-up points</div>
                 <div id="item1" class="items">
@@ -129,12 +128,24 @@
         <div class="breadcrumb">
             <div class="item selected">
                 <div class="name">STARTING POINT</div>
-                <div id="pickup" class="default">Select Pick-up Location</div>
+                <div class="breadcrumb-location">
+                    <div class="breadcrumb-location-container">
+                        <div class="label">Kandivali West</div>
+                    </div>
+                </div>
             </div>
+            <!---->
+            <!---->
         </div>
-        <button class="proceed">Next</button>
+        <div class="actions">
+            <!----> <a href="2.html"><button class="proceed">Next</button></a>
+        </div>
     </div>
 </body>
+
+
+
+
 
 <script>
     //Live location
@@ -230,5 +241,7 @@
     //     selected.appendChild(div);
     // }
     // localStorage.setItem("key", "mumbai");
+
+        //button Next
 
 </script>
