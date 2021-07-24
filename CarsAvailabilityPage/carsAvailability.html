@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="carsAvailability.css">
+    <link rel="icon"
+        href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+        type="image/x-icon">
+
+</head>
+<body>
+    <div id="detailsandfilterdiv">
+        <div id="pickuplocationdiv">
+            <div id="pickuplocationtitle">
+                <span class="material-icons-outlined green-background">
+                    done
+                </span>
+                <p>FIND CARS NEAR YOUR LOCATION</p>
+            </div>
+            <div id="pickuplocationaddress">
+                <div id="pickuppoint">
+                    <p>YOUR STARTING POINT IS ></p>
+                    <p id="pickuppointaddress"></p>
+                </div>
+                <div>
+                    <img src="https://www.zoomcar.com/assets/component-images/ic-ds.f383dbfc960f4b2bc11cc27c44c22514.svg" alt="">
+                    <p>DOORSTEP DELIVERY</p>
+                    <p>(₹299 Delivery Charges)</p>
+                </div>
+                <div>
+                    <!-- <br> -->
+                    <span>DROP OFF IN A DIFFERENT CITY</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="startendtimediv">
+            <div id="pickuplocationtitle">
+                <span class="material-icons-outlined green-background">
+                    done
+                </span>
+                <p>SELECT DATE AND TIME FOR YOUR TRIP</p>
+            </div>
+            <div id="picktimedetails">
+                <div>PICKUP TIME ></div>
+                <p id="startdatedisplay"></p>
+                <p id="startmonthdisplay"></p>
+                <p id="starttimedisplay"></p>
+            </div>
+            <div id="droptimedetails">
+                <div>DROP OFF TIME ></div>
+                <p id="enddatedisplay"></p>
+                <p id="endmonthdisplay"></p>
+                <p id="endtimedisplay"></p>
+            </div>
+        </div>
+        <br>
+        <div id="startendtimediv">
+            <div id="kmspackagetitle">
+                <p>CHOOSE A FREE KMS PACKAGE</p>
+            </div>
+            <br>
+            <div onclick="SetFree100Kms()" id="free100kms">
+                <div>YOU GET FIRST</div>
+                <p>100 kms</p>
+                <p>Free</p>
+            </div>
+            <div onclick="SetFree200Kms()" id="free200kms">
+                <div>YOU GET FIRST</div>
+                <p>200 kms</p>
+                <p>Free</p>
+            </div>
+            <div onclick="SetFree300Kms()" id="free300kms">
+                <div>YOU GET FIRST</div>
+                <p>300 kms</p>
+                <p>Free</p>
+            </div>
+        </div>
+        <div id="cartypediv">
+            <br>
+            <div id="kmspackagetitle">
+                <p>CAR GROUP</p>
+            </div>
+            <br>
+            <div id="hatchbacktype">
+                <img src="https://image.flaticon.com/icons/png/128/5030/5030910.png" alt="">
+                <p>Hatchback</p>
+            </div>
+            <div id="sedantype">
+                <img src="https://img-premium.flaticon.com/png/128/2736/premium/2736918.png?token=exp=1626974813~hmac=150e1f39338826b8666ee21876f67d99" alt="">
+                <p>Sedan</p>
+            </div>
+            <div id="suvtype">
+                <img src="https://img-premium.flaticon.com/png/128/2736/premium/2736781.png?token=exp=1626974849~hmac=fa8b112c88941a55e41553d04808dbf6" alt="">
+                <p>SUV</p>
+            </div>
+            <div id="luxurytype">
+                <img src="https://image.flaticon.com/icons/png/128/5030/5030774.png" alt="">
+                <p>Luxury</p>
+            </div>
+        </div>
+        <div id="transmissiontypediv">
+            <br>
+            <div id="kmspackagetitle">
+                <p>TRANSMISSION</p>
+            </div>
+            <br>
+            <div id="automatictype">
+                <img src="https://img-premium.flaticon.com/png/128/3785/premium/3785528.png?token=exp=1626976606~hmac=61d893cfa390ec391488d411474d08f3" alt="">
+                <p>Automatic</p>
+            </div>
+            <div id="manualtype">
+                <img src="https://image.flaticon.com/icons/png/128/4259/4259321.png"
+                    alt="">
+                <p>Manual</p>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div id="cardetaildiv">
+        <div id="lightningdiv">
+            <span class="material-icons-outlined margin-top-change">bolt</span>
+            <span>Book Early, Book Cheaper!</span>
+        </div>
+        <div id="sortfeaturediv">
+            <p>Sort By:</p>
+            <div onclick="SortHtoL()" id="pricehightolow">Price: High to Low</div>
+            <div onclick="SortLtoH()" id="pricelowtohigh">Price: Low to High</div>
+            <div onclick="SortDistance()" id="distancesort">Distance</div>
+        </div>
+        <div id="fuelcontentdiv">
+            <div onclick="ExcludeFuelCharges()" id="withoutfuelcontainer">
+                <p>WITHOUT FUEL</p>
+                <p>(prices exclude fuel cost)</p>
+            </div>
+            <div onclick="IncludeFuelCharges()" id="withfuelcontainer">
+                <p>WITH FUEL</p>
+                <p>(prices include fuel cost)</p>
+            </div>
+        </div>
+        <div id="carlistdiv"></div>
+    </div>
+</body>
+</html>
+
+<script src="carsAvailability.js"></script>
