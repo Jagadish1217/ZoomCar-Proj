@@ -140,3 +140,11 @@ function setBox5() {
     addressDisplayDiv.innerHTML = `${localStorage.getItem("address")}`;
     document.getElementById("searches").value = `${localStorage.getItem("address")}`;
 }
+
+//next button function
+var proceeding = document.getElementById("proceeding");
+function onProceed() {
+    var data = document.getElementById("searches").value;
+    localStorage.setItem("address", `${data}`)
+}
+proceeding.addEventListener("click", onProceed);

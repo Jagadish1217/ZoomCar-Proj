@@ -1082,7 +1082,12 @@ function setEndTime12() {
     endDetailsDisplayDiv.innerHTML = `${localStorage.getItem("weekDay")} ${localStorage.getItem("endDate")} ${localStorage.getItem("endMonth")}, 2021 ${localStorage.getItem("endTime")}`;
 }
 
-
+function drive1() {
+    window.location.href = "../Process/PickUpLocation.html";
+}
+function drive2() {
+    window.location.href = "../Process/PickUpTimeSelection.html";
+}
 
 setEndDate1();
 setMonth1();

@@ -1080,7 +1080,9 @@ function setStartTime12() {
     startDetailsDisplayDiv.innerHTML = `${localStorage.getItem("weekDay")} ${localStorage.getItem("startDate")} ${localStorage.getItem("startMonth")}, 2021 ${localStorage.getItem("startTime")}`;
 }
 
-
+function drive1() {
+    window.location.href = "../Process/PickUpLocation.html";
+}
 
 setStartDate1();
 setStartMonth1();
