@@ -92,13 +92,13 @@
         <div class="searchHelper">
             <div class="component-popular-locations">
                 <div class="heading">Popular Pick-up points</div>
-                <div id="item1" class="items">
+                <div onclick="setBox1()" id="item1" class="items">
                     Kandivali West
                 </div>
-                <div id="item2" class="items">
+                <div onclick="setBox2()" id="item2" class="items">
                     Thane
                 </div>
-                <div id="item3" class="items">
+                <div onclick="setBox3()" id="item3" class="items">
                     Kharghar
                 </div>
             </div>
@@ -110,18 +110,15 @@
                 <div class="terminals">
                     <div class="heading">Need Zoomcar at <span class="heading-airport-name">Mumbai airport</span>
                     </div>
-                    <div id="terminal1" class="terminal">
+                    <div onclick="setBox4()" id="terminal1" class="terminal">
                         International Terminal (T2)
                     </div>
-                    <div id="terminal2" class="terminal">
+                    <div onclick="setBox5()" id="terminal2" class="terminal">
                         Domestic Terminal (T1A/T1B)
                     </div>
                 </div>
                 <div class="faq">How Zoom Airport works?</div>
             </div>
-            <!---->
-            <!---->
-            <!---->
         </div>
     </div>
     <div class="component-breadcrumb">
@@ -130,7 +127,7 @@
                 <div class="name">STARTING POINT</div>
                 <div class="breadcrumb-location">
                     <div class="breadcrumb-location-container">
-                        <div class="label">Kandivali West</div>
+                        <div id="addressDisplay" class="label">Choose Address</div>
                     </div>
                 </div>
             </div>
@@ -143,105 +140,4 @@
     </div>
 </body>
 
-
-
-
-
-<script>
-    //Live location
-    var label = document.getElementById("labelled");
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Cannot find Location");
-        }
-    }
-    function showPosition(position) {
-        var str = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-        console.log(str);
-    }
-    label.addEventListener("click", getLocation);
-
-    //overlay
-    function on() {
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    function off() {
-        document.getElementById("overlay").style.display = "none";
-    }
-
-    //multiple cities select
-    var div = document.getElementById("choosed");
-    var selectedCity = document.getElementById("selectedCity");
-    function cities() {
-        selectedCity.textContent = null;
-        div.innerHTML = '<input type="text" placeholder="Enter city" autofocus="autofocus"><span></span><ul><li>Ahmedabad</li><li>Bangalore</li><li>Bhopal</li><li>Bhubaneswar</li><li>Calicut</li><li>Chandigarh</li><li>Chennai</li><li>Coimbatore</li><li>Delhi NCR</li><li>Guwahati</li><li>Hyderabad</li><li>Indore</li><li>Jaipur</li><li>Kochi</li><li>Kolkata</li><li>Lucknow</li><li>Mumbai</li><li>Mysore</li><li>Nagpur</li><li>Nashik</li><li>Patna</li><li>Pune</li><li>Raipur</li><li>Siliguri</li><li>Trichy</li><li>Udupi-Manipal</li><li>Vadodara</li><li>Vijayawada</li><li>Vizag</li></ul>';
-    }
-
-    var list = document.querySelector("input");
-    function trigger() {
-        selectedCity.textContent = "Mumbai";
-        div.innerHTML = '<div id="selectedCity">Mumbai</div> <span></span>';
-    }
-    list.addEventListener("click", trigger);
-
-    //square box selectors
-    var i = 0;
-    var j = 0;
-    var temp = 0;
-    var item1 = document.getElementById("item1");
-    var item2 = document.getElementById("item2");
-    var item3 = document.getElementById("item3");
-    var item4 = document.getElementById("terminal1");
-    var item5 = document.getElementById("terminal2");
-    item1.addEventListener("click", box);
-    item2.addEventListener("click", box);
-    item3.addEventListener("click", box);
-    item4.addEventListener("click", box);
-    item5.addEventListener("click", box);
-    function box(i) {
-        if (j == 0) {
-            var item = document.getElementById(`item${i}`);
-            var cname = item.getAttribute('class');
-            cname += ' picked';
-            item.setAttribute('class', cname);
-            j++;
-            var temp = i;
-            i = 0;
-        } else if (j != 0) {
-            var item = document.getElementById(`item${temp}`);
-            if (temp == 1 || temp == 2 || temp == 3) {
-                item.removeAttribute("class");
-                item.setAttribute("class", "items");
-                temp = 0;
-                j = 0;
-                box(i);
-            } else if (temp == 4 || temp == 5)
-                item.removeAttribute("class");
-            item.setAttribute("class", "terminals");
-            temp = 0;
-            j = 0;
-            box(i);
-        }
-    }
-
-
-    // var city = document.getElementsByClassName("dropdown")[0];
-    // var selected = document.getElementsByClassName("select")[0];
-    // city.addEventListener("click", drop);
-
-    // function drop() {
-    //     var city = document.getElementsByClassName("selected_city")[0];
-    //     city.textContent = null;
-    //     var div = document.createElement("div");
-    //     div.innerHTML = "<input type='text' placeholder='Enter city' autofocus='autofocus'>";
-    //     selected.appendChild(div);
-    // }
-    // localStorage.setItem("key", "mumbai");
-
-        //button Next
-
-</script>
+<script src="PickUpLocation.js"></script>

@@ -39,25 +39,25 @@
                 <div class="component-month">
                     <div class="heading">Select a month</div>
                     <div class="months">
-                        <div class="month picked">
+                        <div onclick="setStartMonth1()" id="month1" class="month">
                             Jul
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth2()" id="month2" class="month">
                             Aug
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth3()" id="month3" class="month">
                             Sep
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth4()" id="month4" class="month">
                             Oct
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth5()" id="month5" class="month">
                             Nov
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth6()" id="month6" class="month">
                             Dec
                         </div>
-                        <div class="month">
+                        <div onclick="setStartMonth7()" id="month7" class="month">
                             Jan
                         </div>
                     </div>
@@ -66,33 +66,33 @@
                     <div class="heading">Start date <i>(Prices will be higher than usual on Weekends/Festive days)</i>
                     </div>
                     <div class="days">
-                        <div class="day picked low-price">
-                            <div class="text">Fri</div>
-                            23
-                        </div>
-                        <div class="day low-price">
-                            <div class="text">Sat</div>
-                            24
-                        </div>
-                        <div class="day low-price">
+                        <div onclick="setStartDate1()" id="day1" class="day low-price">
                             <div class="text">Sun</div>
                             25
                         </div>
-                        <div class="day low-price">
+                        <div onclick="setStartDate2()" id="day2" class="day low-price">
                             <div class="text">Mon</div>
                             26
                         </div>
-                        <div class="day low-price">
+                        <div onclick="setStartDate3()" id="day3" class="day low-price">
                             <div class="text">Tue</div>
                             27
                         </div>
-                        <div class="day low-price">
+                        <div onclick="setStartDate4()" id="day4" class="day low-price">
                             <div class="text">Wed</div>
                             28
                         </div>
-                        <div class="day low-price">
+                        <div onclick="setStartDate5()" id="day5" class="day low-price">
                             <div class="text">Thu</div>
                             29
+                        </div>
+                        <div onclick="setStartDate6()" id="day6" class="day low-price">
+                            <div class="text">Fri</div>
+                            30
+                        </div>
+                        <div onclick="setStartDate7()" id="day7" class="day low-price">
+                            <div class="text">Sat</div>
+                            31
                         </div>
                         <div class="show-more">show more</div>
                     </div>
@@ -105,18 +105,18 @@
                         <!---->
                     </div>
                     <div class="time">
-                        <div class="select_time picked">0:00</div>
-                        <div class="select_time">2:00</div>
-                        <div class="select_time">4:00</div>
-                        <div class="select_time">6:00</div>
-                        <div class="select_time">8:00</div>
-                        <div class="select_time">10:00</div>
-                        <div class="select_time">12:00</div>
-                        <div class="select_time">14:00</div>
-                        <div class="select_time">16:00</div>
-                        <div class="select_time">18:00</div>
-                        <div class="select_time">20:00</div>
-                        <div class="select_time">22:00</div>
+                        <div onclick="setStartTime1()" id="time1" class="select_time">0:00</div>
+                        <div onclick="setStartTime2()" id="time2" class="select_time">2:00</div>
+                        <div onclick="setStartTime3()" id="time3" class="select_time">4:00</div>
+                        <div onclick="setStartTime4()" id="time4" class="select_time">6:00</div>
+                        <div onclick="setStartTime5()" id="time5" class="select_time">8:00</div>
+                        <div onclick="setStartTime6()" id="time6" class="select_time">10:00</div>
+                        <div onclick="setStartTime7()" id="time7" class="select_time">12:00</div>
+                        <div onclick="setStartTime8()" id="time8" class="select_time">14:00</div>
+                        <div onclick="setStartTime9()" id="time9" class="select_time">16:00</div>
+                        <div onclick="setStartTime10()" id="time10" class="select_time">18:00</div>
+                        <div onclick="setStartTime11()" id="time11" class="select_time">20:00</div>
+                        <div onclick="setStartTime12()" id="time12" class="select_time">22:00</div>
                     </div>
 
                 </div>
@@ -129,14 +129,15 @@
                 <div class="name">STARTING POINT</div>
                 <div class="breadcrumb-location">
                     <div class="breadcrumb-location-container">
-                        <div class="label">Kandivali West</div>
+                        <div id="addressDisplay" class="label"></div>
                     </div>
                 </div>
             </div>
             <div class="item selected">
                 <div class="name">PICKUP TIME</div>
                 <div class="breadcrumb-location">
-                    <div class="label time-label">Fri 23 Jul, 2021 20:00<span>evening</span></div>
+                    <div id="startDetailsDisplay" class="label time-label">Fri 25 Jul, 2021 20:00
+                    </div>
                 </div>
             </div>
             <!---->
@@ -150,23 +151,4 @@
 
 </html>
 
-<script>
-//     localStorage.setItem("address", "mumbai");
-//     localStorage.setItem("star
-//     ", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     localStorage.setItem("key", "mumbai");
-//     var pickupdetails = {
-//         address: "Marine Dr, Chowpatty, Girgaon, Mumbai, Maharashtra 400007, India",
-//         startDate: "23",
-//         startMonth: "July",
-//         startTime: "17:00",
-//         endDate: "25",
-//         endMonth: "July",
-//         endTime: "23:00",
-//     };
-// </script>
+<script src="PickUpTimeSelection.js"></script>
