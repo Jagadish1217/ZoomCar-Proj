@@ -1,3 +1,7 @@
+var DetailsOfBookingCar = JSON.parse(
+  localStorage.getItem("SelectedCarDetails")
+);
+// console.log("DetailsOfBookingCar:", DetailsOfBookingCar);
 //LogIn POP
 var logIn = document.getElementById("login_btn");
 logIn.addEventListener("click", popupCome2);
@@ -384,7 +388,7 @@ function initial(id) {
   drag.style.color = "rgb(255, 255, 255)";
 }
 /*starting date and time get from local storage*/
-let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
+/*let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
 let get_pi_dt = JSON.parse(localStorage.getItem("pick_up_date"));
 get_pi_dt = get_pi_dt.split(" ");
 get_pi_dt = get_pi_dt[0];
@@ -392,11 +396,11 @@ get_pi_dt = get_pi_dt[0];
 let time_parent = document.getElementById("pi_ti");
 let date_parent = document.getElementById("pi_dt");
 time_parent.innerText = get_pi_tm;
-date_parent.innerText = get_pi_dt;
+date_parent.innerText = get_pi_dt;*/
 
 /*getting drop time and date from LS*/
 
-let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
+/*let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
 let get_dr_dt = JSON.parse(localStorage.getItem("drop_date"));
 get_dr_dt = get_dr_dt.split(" ");
 get_dr_dt = get_dr_dt[0];
@@ -428,9 +432,149 @@ let tt_amt = document.getElementById("total_amount");
 tt_amt.innerText = bk_amt + ref_amt;
 
 let res = tt_amt.innerText;
-console.log("res:", res);
+console.log("res:", res);*/
 
 function gotopaypg() {
   //localStorage.setItem("payable_amt", JSON.stringify(res));
   window.location.href = "../payment/payment.html";
 }
+
+function FillSummaryDetailsFromLocalStorage() {
+  let carImg_parent = document.getElementById("right_car");
+  carImg_parent.src = DetailsOfBookingCar.carImage;
+  // console.log("carImage:", DetailsOfBookingCar.carImage);
+
+  let carNm_parent = document.getElementById("car_name");
+  carNm_parent.innerText = DetailsOfBookingCar.carname;
+
+  let carseat_parent = document.getElementById("seating_cap");
+  carseat_parent.innerText = `( ${DetailsOfBookingCar.carseater} )`;
+
+  let time_parent = document.getElementById("pi_ti");
+  let date_parent = document.getElementById("pi_dt");
+  time_parent.innerText = DetailsOfBookingCar.bookingStartTime;
+  date_parent.innerText = `${DetailsOfBookingCar.bookingStartDate} ${DetailsOfBookingCar.bookingStartMonth}`;
+
+  let time_parent2 = document.getElementById("dr_ti");
+  let date_parent2 = document.getElementById("dr_dt");
+  time_parent2.innerText = DetailsOfBookingCar.bookingEndTime;
+  date_parent2.innerText = `${DetailsOfBookingCar.bookingEndDate} ${DetailsOfBookingCar.bookingEndMonth}`;
+
+  let freekms = document.getElementById("freekmsvalue");
+  freekms.innerHTML = DetailsOfBookingCar.freekms;
+
+  let excesskms = document.getElementById("excesskmsvalue");
+  let tempstore = DetailsOfBookingCar.excessKmsDetails.split("");
+  // console.log("tempstore:", tempstore);
+  let cropped = tempstore.splice(0, 7);
+  // console.log("cropped:", cropped);
+  // console.log("tempstore:", tempstore);
+  excesskms.innerHTML = tempstore.join("");
+
+  let book_parent = document.getElementById("bkn_amount");
+  book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+
+  let ref_amt = document.getElementById("ref_amount");
+  ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
+
+  let tt_amt = document.getElementById("total_amount");
+  let tempbookvalue = book_parent.innerHTML.split("");
+  // console.log("tempbookvalue:", tempbookvalue);
+  let comma1index = tempbookvalue.indexOf(",");
+  // console.log("comma1index:", comma1index);
+  let comma1 = tempbookvalue.splice(comma1index, 1);
+  // console.log("comma1:", comma1);
+  let temprefvalue = ref_amt.innerHTML.split("");
+  // console.log("temprefvalue:", temprefvalue);
+  let comma2index = temprefvalue.indexOf(",");
+  // console.log("comma1index:", comma1index);
+  let comma2 = temprefvalue.splice(comma2index, 1);
+  // console.log("comma1:", comma1);
+  tt_amt.innerHTML = ThousandsSeparatorForAmount(
+    Number(tempbookvalue.join("")) + Number(temprefvalue.join(""))
+  );
+  localStorage.setItem("CheckoutPaymentTotal", tt_amt.innerHTML);
+}
+
+function ThousandsSeparatorForAmount(num) {
+  var num_parts = num.toString().split(".");
+  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return num_parts.join(".");
+}
+
+function ValidatePromoCode(e) {
+  if (e.code == "Enter") {
+    let promoCodeEntered = document.getElementById("promocode");
+    let discountp = document.getElementById("discountAmount");
+    let tempbookvalue1 = DetailsOfBookingCar.bookingFee.split("");
+    // console.log("tempbookvalue:", tempbookvalue);
+    let comma1index1 = tempbookvalue1.indexOf(",");
+    // console.log("comma1index:", comma1index);
+    let comma1_1 = tempbookvalue1.splice(comma1index1, 1);
+    // console.log("comma1:", comma1);
+    if (promoCodeEntered.value == "MASAI25") {
+      let discount_Price = (Number(tempbookvalue1.join("")) * 25) / 100;
+      discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
+      let book_parent = document.getElementById("bkn_amount");
+      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+
+      let ref_amt = document.getElementById("ref_amount");
+      ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
+
+      let tt_amt = document.getElementById("total_amount");
+      let tempbookvalue = book_parent.innerHTML.split("");
+      // console.log("tempbookvalue:", tempbookvalue);
+      let comma1index = tempbookvalue.indexOf(",");
+      // console.log("comma1index:", comma1index);
+      let comma1 = tempbookvalue.splice(comma1index, 1);
+      // console.log("comma1:", comma1);
+      let temprefvalue = ref_amt.innerHTML.split("");
+      // console.log("temprefvalue:", temprefvalue);
+      let comma2index = temprefvalue.indexOf(",");
+      // console.log("comma1index:", comma1index);
+      let comma2 = temprefvalue.splice(comma2index, 1);
+      // console.log("comma1:", comma1);
+      tt_amt.innerHTML = ThousandsSeparatorForAmount(
+        Number(tempbookvalue.join("")) +
+          Number(temprefvalue.join("")) -
+          discount_Price
+      );
+      promoCodeEntered.value = "";
+      localStorage.setItem("CheckoutPaymentTotal", tt_amt.innerHTML);
+    } else if (promoCodeEntered.value == "FTWEB10") {
+      let discount_Price = (Number(tempbookvalue1.join("")) * 60) / 100;
+      discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
+      let book_parent = document.getElementById("bkn_amount");
+      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+
+      let ref_amt = document.getElementById("ref_amount");
+      ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
+
+      let tt_amt = document.getElementById("total_amount");
+      let tempbookvalue = book_parent.innerHTML.split("");
+      // console.log("tempbookvalue:", tempbookvalue);
+      let comma1index = tempbookvalue.indexOf(",");
+      // console.log("comma1index:", comma1index);
+      let comma1 = tempbookvalue.splice(comma1index, 1);
+      // console.log("comma1:", comma1);
+      let temprefvalue = ref_amt.innerHTML.split("");
+      // console.log("temprefvalue:", temprefvalue);
+      let comma2index = temprefvalue.indexOf(",");
+      // console.log("comma1index:", comma1index);
+      let comma2 = temprefvalue.splice(comma2index, 1);
+      // console.log("comma1:", comma1);
+      tt_amt.innerHTML = ThousandsSeparatorForAmount(
+        Number(tempbookvalue.join("")) +
+          Number(temprefvalue.join("")) -
+          discount_Price
+      );
+      promoCodeEntered.value = "";
+      localStorage.setItem("CheckoutPaymentTotal", tt_amt.innerHTML);
+    } else {
+      alert("Please enter a valid promo code");
+      promoCodeEntered.value = "";
+    }
+  }
+}
+
+FillSummaryDetailsFromLocalStorage();

@@ -1,15 +1,16 @@
+var SelectedCarToBook = {};
 document.title = `Book A Car In ${localStorage.getItem(
   "SelectedCity"
 )} | Rent Cars @ Most Affordable Rates - Zoomcar`;
 // Details coming from local storage - stored from selector page's details
 var pickupdetails = {
-  address: "Marine Dr, Chowpatty, Girgaon, Mumbai, Maharashtra 400007, India",
-  startDate: "23",
-  startMonth: "July",
-  startTime: "03:30",
-  endDate: "25",
-  endMonth: "July",
-  endTime: "00:10",
+  address: localStorage.getItem("address"),
+  startDate: localStorage.getItem("startDate"),
+  startMonth: localStorage.getItem("startMonth"),
+  startTime: localStorage.getItem("startTime"),
+  endDate: localStorage.getItem("endDate"),
+  endMonth: localStorage.getItem("endMonth"),
+  endTime: localStorage.getItem("endTime"),
 };
 
 var carslist = [
@@ -31,6 +32,7 @@ var carslist = [
     carCostRatio: 131.3,
     carFreeKMS: 1,
     fuelRatio: 1,
+    doorDeliveryCharges: 0,
   },
   {
     carimage:
@@ -50,6 +52,7 @@ var carslist = [
     carCostRatio: 189.6,
     carFreeKMS: 1,
     fuelRatio: 1,
+    doorDeliveryCharges: 0,
   },
   {
     carimage:
@@ -69,6 +72,7 @@ var carslist = [
     carCostRatio: 214.4,
     carFreeKMS: 1,
     fuelRatio: 1,
+    doorDeliveryCharges: 0,
   },
   {
     carimage:
@@ -88,6 +92,7 @@ var carslist = [
     carCostRatio: 191.3,
     carFreeKMS: 1,
     fuelRatio: 1,
+    doorDeliveryCharges: 0,
   },
   {
     carimage:
@@ -107,6 +112,7 @@ var carslist = [
     carCostRatio: 210.7,
     carFreeKMS: 1,
     fuelRatio: 1,
+    doorDeliveryCharges: 0,
   },
 ];
 
@@ -124,7 +130,7 @@ function FillPickupLocationDetails() {
 
   // To redirect the user to select location page in case he/she wishes to change pickup point
   pickuppointaddress.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/PickUpLocation.html";
   });
 }
 
@@ -195,7 +201,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startdatedisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/PickUpTimeSelection.html";
   });
 
   enddatedisplay.addEventListener("mouseover", function () {
@@ -203,7 +209,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   enddatedisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/DropTimeSelection.html";
   });
 
   startmonthdisplay.addEventListener("mouseover", function () {
@@ -211,14 +217,14 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startmonthdisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/PickUpTimeSelection.html";
   });
   endmonthdisplay.addEventListener("mouseover", function () {
     endmonthdisplay.style.cursor = "pointer";
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endmonthdisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/DropTimeSelection.html";
   });
 
   starttimedisplay.addEventListener("mouseover", function () {
@@ -226,7 +232,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   starttimedisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/PickUpTimeSelection.html";
   });
 
   endtimedisplay.addEventListener("mouseover", function () {
@@ -234,7 +240,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endtimedisplay.addEventListener("click", function () {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../Process/DropTimeSelection.html";
   });
 }
 
@@ -243,6 +249,8 @@ function SetFree100Kms() {
   let free100kms = document.getElementById("free100kms");
   let free200kms = document.getElementById("free200kms");
   let free300kms = document.getElementById("free300kms");
+
+  let freekmsrange = document.getElementById("100kmsrange");
 
   // Differentiates the selected category from the other ones
   free100kms.style.border = "2px solid #70ad4d";
@@ -257,6 +265,8 @@ function SetFree100Kms() {
   //   free300kms.style.borderRight = "1px solid light-grey";
   free300kms.style.color = "black";
 
+  SelectedCarToBook.freekms = freekmsrange.innerHTML;
+
   for (car of carslist) {
     car.carFreeKMS = 1;
   }
@@ -267,6 +277,8 @@ function SetFree200Kms() {
   let free100kms = document.getElementById("free100kms");
   let free200kms = document.getElementById("free200kms");
   let free300kms = document.getElementById("free300kms");
+
+  let freekmsrange = document.getElementById("200kmsrange");
 
   free200kms.style.border = "2px solid #70ad4d";
   free200kms.style.color = "#70ad4d";
@@ -280,6 +292,8 @@ function SetFree200Kms() {
   //   free300kms.style.borderRight = "1px solid light-grey";
   free300kms.style.color = "black";
 
+  SelectedCarToBook.freekms = freekmsrange.innerHTML;
+
   for (car of carslist) {
     car.carFreeKMS = 1.5;
   }
@@ -290,6 +304,8 @@ function SetFree300Kms() {
   let free100kms = document.getElementById("free100kms");
   let free200kms = document.getElementById("free200kms");
   let free300kms = document.getElementById("free300kms");
+
+  let freekmsrange = document.getElementById("300kmsrange");
   // Differentiates the selected category from the other ones
 
   free300kms.style.border = "2px solid #70ad4d";
@@ -303,6 +319,8 @@ function SetFree300Kms() {
   free200kms.style.border = "0px solid #70ad4d";
   free200kms.style.borderRight = "1px solid light-grey";
   free200kms.style.color = "black";
+
+  SelectedCarToBook.freekms = freekmsrange.innerHTML;
 
   for (car of carslist) {
     car.carFreeKMS = 2.3;
@@ -595,7 +613,7 @@ function showCars(cararray) {
   var carlistdiv = document.getElementById("carlistdiv");
   carlistdiv.innerHTML = "";
 
-  console.log(cararray);
+  // console.log(cararray);
   if (
     cararray == [] ||
     cararray == null ||
@@ -609,7 +627,7 @@ function showCars(cararray) {
     image.style.marginTop = "4%";
     carlistdiv.style.textAlign = "center";
     let msg = document.createElement("p");
-    msg.innerHTML = `There are no cars available on your selected time and location. Please try again by clearing all filters.`;
+    msg.innerHTML = `There are no cars available on your selected time and location. <br> Please try again by clearing all filters.`;
     msg.style.marginTop = "4%";
     carlistdiv.append(image, msg);
   } else {
@@ -751,7 +769,8 @@ function showCars(cararray) {
         car.cartransmissiontype,
         car.carCostRatio,
         car.carFreeKMS,
-        car.fuelRatio
+        car.fuelRatio,
+        car.doorDeliveryCharges
       );
 
       // console.log(costSpan.innerHTML);
@@ -784,8 +803,9 @@ function showCars(cararray) {
       carlistdiv.append(div);
 
       booknowbtn.addEventListener("click", function () {
-        var SelectedCarToBook = {};
         SelectedCarToBook.carImage = car.carimage;
+        SelectedCarToBook.carname = car.carname;
+        SelectedCarToBook.carseater = car.carseater;
         SelectedCarToBook.bookingStartTime = pickupdetails.startTime;
         SelectedCarToBook.bookingStartDate = pickupdetails.startDate;
         SelectedCarToBook.bookingStartMonth = pickupdetails.startMonth;
@@ -793,11 +813,14 @@ function showCars(cararray) {
         SelectedCarToBook.bookingEndDate = pickupdetails.endDate;
         SelectedCarToBook.bookingEndMonth = pickupdetails.endMonth;
         SelectedCarToBook.bookingFee = costSpan.innerHTML;
+        SelectedCarToBook.excessKmsDetails = excessCostSpan.innerHTML;
 
         localStorage.setItem(
           "SelectedCarDetails",
           JSON.stringify(SelectedCarToBook)
         );
+
+        window.location.href = "../checkout/summarypg.html";
       });
     }
   }
@@ -864,46 +887,63 @@ function FindCostOfVehicleBasedOnCategoryAndTime(
   geartype,
   costratio,
   freekmsrange,
-  fuelcost
+  fuelcost,
+  deliveryCharge
 ) {
   if (categorytype == "Hatchback" && geartype == "Manual") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "Hatchback" && geartype == "Automatic") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "Sedan" && geartype == "Manual") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "Sedan" && geartype == "Automatic") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "SUV" && geartype == "Manual") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "SUV" && geartype == "Automatic") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "Luxury" && geartype == "Manual") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   } else if (categorytype == "Luxury" && geartype == "Automatic") {
     let n = ThousandsSeparatorForPrice(
-      Math.round(totaltime * costratio * freekmsrange * fuelcost)
+      Math.round(
+        totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
+      )
     );
     return n;
   }
@@ -913,6 +953,23 @@ function ThousandsSeparatorForPrice(num) {
   var num_parts = num.toString().split(".");
   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return num_parts.join(".");
+}
+
+var deliveryToggle = false;
+function AddDoorDeliveryCharges() {
+  if (deliveryToggle) {
+    for (car of carslist) {
+      car.doorDeliveryCharges = 0;
+    }
+    showCars(carslist);
+    deliveryToggle = false;
+  } else {
+    for (car of carslist) {
+      car.doorDeliveryCharges = 299;
+    }
+    showCars(carslist);
+    deliveryToggle = true;
+  }
 }
 
 FillPickupDropOffDateTimeDetails();

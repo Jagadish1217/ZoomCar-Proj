@@ -1,3 +1,6 @@
+var DetailsOfBookingCar = JSON.parse(
+  localStorage.getItem("SelectedCarDetails")
+);
 //LogIn POP
 var logIn = document.getElementById("login_btn");
 logIn.addEventListener("click", popupCome2);
@@ -382,7 +385,7 @@ function initial(id) {
   drag.style.color = "rgb(255, 255, 255)";
 }
 /*starting date and time get from local storage*/
-let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
+/*let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
 let get_pi_dt = JSON.parse(localStorage.getItem("pick_up_date"));
 get_pi_dt = get_pi_dt.split(" ");
 get_pi_dt = get_pi_dt[0];
@@ -390,11 +393,11 @@ get_pi_dt = get_pi_dt[0];
 let time_parent = document.getElementById("pi_ti");
 let date_parent = document.getElementById("pi_dt");
 time_parent.innerText = get_pi_tm;
-date_parent.innerText = get_pi_dt;
+date_parent.innerText = get_pi_dt;*/
 
 /*getting drop time and date from LS*/
 
-let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
+/*let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
 let get_dr_dt = JSON.parse(localStorage.getItem("drop_date"));
 get_dr_dt = get_dr_dt.split(" ");
 get_dr_dt = get_dr_dt[0];
@@ -402,7 +405,7 @@ get_dr_dt = get_dr_dt[0];
 let time_parent2 = document.getElementById("dr_ti");
 let date_parent2 = document.getElementById("dr_dt");
 time_parent2.innerText = get_dr_tm;
-date_parent2.innerText = get_dr_dt;
+date_parent2.innerText = get_dr_dt;*/
 
 // let bookingPrice = JSON.parse(localStorage.getItem("booking_pr"))
 // let book_parent = document.getElementById("bkn_amount");
@@ -425,7 +428,7 @@ carImg_parent.src = carImg;
 // let tt_amt = document.getElementById("total_amount");
 // tt_amt.innerText = bk_amt + ref_amt;
 
-let payable_amt = JSON.parse(localStorage.getItem("payable_amt"));
+let payable_amt = localStorage.getItem("CheckoutPaymentTotal");
 let pay_amt_parent = document.getElementById("pay_amt");
 pay_amt_parent.innerText = payable_amt;
 let pay_amt_parent2 = document.getElementById("pay_amt2");
@@ -476,7 +479,67 @@ function paymentdone(e) {
   ) {
     alert("Please Add Valid Inputs");
     e.prevent();
-  } else {
-    window.location.href = "greeting.html";
+  } 
+  else {
+    alert("Your Payment Done Successfully!");
+    window.location.href = "../Landingpage/index.html";
   }
+
 }
+
+function FillSummaryDetailsFromLocalStorage() {
+  let carImg_parent = document.getElementById("right_car");
+  carImg_parent.src = DetailsOfBookingCar.carImage;
+  // console.log("carImage:", DetailsOfBookingCar.carImage);
+
+  let carNm_parent = document.getElementById("car_name");
+  carNm_parent.innerText = DetailsOfBookingCar.carname;
+
+  let carseat_parent = document.getElementById("seating_cap");
+  carseat_parent.innerText = `( ${DetailsOfBookingCar.carseater} )`;
+
+  let time_parent = document.getElementById("pi_ti");
+  let date_parent = document.getElementById("pi_dt");
+  time_parent.innerText = DetailsOfBookingCar.bookingStartTime;
+  date_parent.innerText = `${DetailsOfBookingCar.bookingStartDate} ${DetailsOfBookingCar.bookingStartMonth}`;
+
+  let time_parent2 = document.getElementById("dr_ti");
+  let date_parent2 = document.getElementById("dr_dt");
+  time_parent2.innerText = DetailsOfBookingCar.bookingEndTime;
+  date_parent2.innerText = `${DetailsOfBookingCar.bookingEndDate} ${DetailsOfBookingCar.bookingEndMonth}`;
+
+  let freekms = document.getElementById("freekmsvalue");
+  freekms.innerHTML = DetailsOfBookingCar.freekms;
+
+  let excesskms = document.getElementById("excesskmsvalue");
+  let tempstore = DetailsOfBookingCar.excessKmsDetails.split("");
+  // console.log("tempstore:", tempstore);
+  let cropped = tempstore.splice(0, 7);
+  // console.log("cropped:", cropped);
+  // console.log("tempstore:", tempstore);
+  excesskms.innerHTML = tempstore.join("");
+
+  // let book_parent = document.getElementById("bkn_amount");
+  // book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+
+  // let ref_amt = document.getElementById("ref_amount");
+  // ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
+
+  // let tt_amt = document.getElementById("total_amount");
+  // let tempbookvalue = book_parent.innerHTML.split("");
+  // // console.log("tempbookvalue:", tempbookvalue);
+  // let comma1index = tempbookvalue.indexOf(",");
+  // // console.log("comma1index:", comma1index);
+  // let comma1 = tempbookvalue.splice(comma1index, 1);
+  // // console.log("comma1:", comma1);
+  // let temprefvalue = ref_amt.innerHTML.split("");
+  // // console.log("temprefvalue:", temprefvalue);
+  // let comma2index = temprefvalue.indexOf(",");
+  // // console.log("comma1index:", comma1index);
+  // let comma2 = temprefvalue.splice(comma2index, 1);
+  // // console.log("comma1:", comma1);
+  // tt_amt.innerHTML = ThousandsSeparatorForAmount(
+  //   Number(tempbookvalue.join("")) + Number(temprefvalue.join(""))
+  // );
+}
+FillSummaryDetailsFromLocalStorage();

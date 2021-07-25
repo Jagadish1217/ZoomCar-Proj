@@ -453,31 +453,31 @@ margin-right: 50px;
 }
 
 .log_r_top_cont_face {
-    background-color: blue;
-    margin: 20px auto 20px;
-    width: 300px;
-    height: 20px;
-    padding: 12px 0;
-    color: white;
+  background-color: blue;
+  margin: 20px auto 20px;
+  width: 300px;
+  height: 20px;
+  padding: 12px 0;
+  color: white;
 }
 
 .log_r_top_cont a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .log_r_top_cont_gmail {
-    background-color: red;
-    margin: 20px auto 20px;
-    width: 300px;
-    color: white;
-    height: 20px;
-    padding: 12px 0;
+  background-color: red;
+  margin: 20px auto 20px;
+  width: 300px;
+  color: white;
+  height: 20px;
+  padding: 12px 0;
 }
 
 .log_r_top_cont a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .log_r_bot {
@@ -1088,6 +1088,8 @@ background-color: inherit;
   border-radius: 50%;
   background-color: gray;
   margin: 60px 0px;
+  padding-top: 5px;
+  text-align: center;
 }
 
 #navi_box {
@@ -1309,4 +1311,7 @@ background-color: inherit;
   #front_box {
     height: 160vh;
   }
+}
+#pdt {
+  margin-left: 15%;
 }

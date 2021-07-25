@@ -83,12 +83,13 @@ function AddPopularCities() {
       //   p_name.style.fontWeight = "bold";
       //   p_name.style.fontSize = "16px";
       btn.style.border = "1px solid green";
-      modaldiv.style.display = "none";
+      // modaldiv.style.display = "none";
+      window.location.href = "../Landingpage/index.html";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
-      landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
-        "SelectedCity"
-      )}`;
+      // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
+      //   "SelectedCity"
+      // )}`;
     });
 
     btn.addEventListener("mouseout", function () {
@@ -123,12 +124,13 @@ function AddOtherCities() {
       p_name.style.color = "green";
       //   p_name.style.fontWeight = "medium";
       //   p_name.style.fontSize = "16px";
-      modaldiv.style.display = "none";
+      // modaldiv.style.display = "none";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
-      landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
-        "SelectedCity"
-      )}`;
+      window.location.href = "../Landingpage/index.html";
+      // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
+      //   "SelectedCity"
+      // )}`;
     });
 
     btn.addEventListener("mouseout", function () {

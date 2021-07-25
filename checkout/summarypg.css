@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
     Helvetica, Arial, sans-serif !important;
+  background-color: #f7f7f7;
 }
 #offers {
   margin: 0%;
@@ -751,16 +752,20 @@ body {
 #che_out {
   width: 600px;
   height: 500px;
+  /* background-color: white; */
 }
 #cont1 {
   width: 600px;
   height: 420px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
+  background-color: white;
 }
 #b_check_div {
   width: 130px;
   height: 40px;
   margin: 20px auto;
+  /* background-color: #f7f7f7 !important; */
+  cursor: pointer;
 }
 #b_check_div .checkout_btn {
   width: 100%;
@@ -769,6 +774,7 @@ body {
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 #book_fee,
 #ref_amt,
@@ -785,6 +791,9 @@ body {
   font-size: 20px;
   padding-left: 20px;
   box-sizing: border-box;
+}
+.ch_head {
+  display: flex;
 }
 #viewoff {
   padding: 15px 20px;
@@ -821,7 +830,7 @@ body {
   padding: 0;
 }
 #total {
-  padding-left: 20px;
+  padding-left: 15px;
   box-sizing: border-box;
   background-color: rgb(228, 241, 220);
   color: green;
@@ -835,9 +844,10 @@ body {
 #sumry {
   width: 300px;
   height: 850px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   text-align: center;
   margin-left: 70px;
+  background-color: white;
 }
 #top_w_img {
   box-sizing: border-box;
@@ -863,6 +873,9 @@ body {
   width: 73%;
   margin: auto;
 }
+#pdt {
+  margin-left: 15%;
+}
 .time_hr {
   width: 50px;
   padding: 0%;
@@ -874,6 +887,10 @@ body {
   border-radius: 50%;
   background-color: gray;
   margin: 60px 0px;
+  /* margin-top: 10%; */
+  /* padding: 10px; */
+  padding-top: 5px;
+  text-align: center;
 }
 #navi_box {
   width: 90%;
@@ -1066,4 +1083,9 @@ body {
   #front_box {
     height: 160vh;
   }
+}
+#discountAmount {
+  justify-content: right;
+  text-align: right;
+  margin-left: 4%;
 }
