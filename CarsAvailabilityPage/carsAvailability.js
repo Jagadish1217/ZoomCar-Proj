@@ -173,7 +173,7 @@ function FillPickupDropOffDateTimeDetails() {
   }
   starttimedisplay.innerHTML = res;
   var endtimedisplay = document.getElementById("endtimedisplay");
-  if (pickupdetails.startTime > "12:00") {
+  if (pickupdetails.endTime > "12:00") {
     var time2 = pickupdetails.endTime.split("");
     var res1 = time2[0] + time2[1];
     if (Number(res1) < 12) {
@@ -803,9 +803,10 @@ function showCars(cararray) {
       carlistdiv.append(div);
 
       booknowbtn.addEventListener("click", function () {
-        SelectedCarToBook.carImage = car.carimage;
-        SelectedCarToBook.carname = car.carname;
-        SelectedCarToBook.carseater = car.carseater;
+        SelectedCarToBook.carImage = car_pic.src;
+        SelectedCarToBook.carname = namediv.innerHTML;
+        // console.log("carname:", namediv.innerHTML);
+        SelectedCarToBook.carseater = car_seat_details.innerHTML;
         SelectedCarToBook.bookingStartTime = pickupdetails.startTime;
         SelectedCarToBook.bookingStartDate = pickupdetails.startDate;
         SelectedCarToBook.bookingStartMonth = pickupdetails.startMonth;

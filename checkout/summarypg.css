@@ -822,6 +822,9 @@ body {
 #total_div {
   display: flex;
 }
+#total_div {
+  margin-left: -5%;
+}
 #ref_lef {
   width: 540px;
 }
@@ -1087,72 +1090,72 @@ body {
 #discountAmount {
   justify-content: right;
   text-align: right;
-  margin-left: 4%;
+  margin-left: 2%;
 }
 
 /* Creating Count Procedure */
 #count {
-            margin-top: 60px;
-            height: 100px;
-        }
+  margin-top: 60px;
+  height: 100px;
+}
 
-        #count_inner {
-            margin: 12px auto;
-            height: 55px;
-            padding: 8px 0;
-            text-align: center;
-        }
+#count_inner {
+  margin: 12px auto;
+  height: 55px;
+  padding: 8px 0;
+  text-align: center;
+}
 
-        #inner_padding {
-            position: relative;
-            min-height: 1px;
-            padding-right: 15px;
-            padding-left: 15px;
-            height: 54px;
-        }
+#inner_padding {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 54px;
+}
 
-        #blocks {
-            display: inline-block;
-            margin: 4px -16px 0 0;
-            width: 78px;
-            height: 50px;
-        }
+#blocks {
+  display: inline-block;
+  margin: 4px -16px 0 0;
+  width: 78px;
+  height: 50px;
+}
 
-        #horizontal_line {
-            width: 85px;
-            border-top: 1px #ccc solid;
-            position: relative;
-            top: 25px;
-            left: -5px;
-        }
+#horizontal_line {
+  width: 85px;
+  border-top: 1px #ccc solid;
+  position: relative;
+  top: 25px;
+  left: -5px;
+}
 
-        div {
-            display: block;
-        }
+div {
+  display: block;
+}
 
-        #circle {
-            background: #70757d;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 10px;
-            /* margin-top: 5px; */
-            display: inline-block;
-            font-size: 12px;
-        }
+#circle {
+  background: #70757d;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  /* margin-top: 5px; */
+  display: inline-block;
+  font-size: 12px;
+}
 
-        .green {
-            background: rgb(99, 161, 62) !important
-        }
+.green {
+  background: rgb(99, 161, 62) !important;
+}
 
-        .green_line {
-            border-top: 1px rgb(99, 161, 62) solid !important;
-        }
+.green_line {
+  border-top: 1px rgb(99, 161, 62) solid !important;
+}
 
-        #txt {
-            font-size: 14px;
-            margin-top: 5px;
-            font-weight: 400;
-            font-family: 'Open Sans', sans-serif;
-            color: #666;
-        }
+#txt {
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  color: #666;
+}

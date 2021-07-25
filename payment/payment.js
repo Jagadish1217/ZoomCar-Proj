@@ -457,7 +457,7 @@ function checkchange() {
     cvV.length == 3
   ) {
     let pay_btn_main = document.getElementById("pay_btn_main");
-    pay_btn_main.style.backgroundColor = "greenyellow";
+    pay_btn_main.style.backgroundColor = "#70ad4d";
     pay_btn_main.style.color = "black";
   }
 }
@@ -479,12 +479,9 @@ function paymentdone(e) {
   ) {
     alert("Please Add Valid Inputs");
     e.prevent();
-  } 
-  else {
-    alert("Your Payment Done Successfully!");
-    window.location.href = "../Landingpage/index.html";
+  } else {
+    window.location.href = "greeting.html";
   }
-
 }
 
 function FillSummaryDetailsFromLocalStorage() {
