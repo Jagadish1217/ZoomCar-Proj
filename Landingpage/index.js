@@ -71,7 +71,7 @@ function signinacc(e) {
     e.prevent();
   }
 
-  let usermob_check = JSON.parse(localStorage.getItem("users"));
+  let usermob_check = JSON.parse(localStorage.getItem("logs"));
 
   console.log("usermob_check:", usermob_check);
 
@@ -129,7 +129,7 @@ function saveData(e) {
     password: password,
   };
 
-  let s_arr = localStorage.getItem("users", userData);
+  let s_arr = localStorage.getItem("logs", userData);
 
   if (s_arr == null) {
     s_arr = [];
@@ -138,7 +138,7 @@ function saveData(e) {
   }
   s_arr.push(userData);
 
-  localStorage.setItem("users", JSON.stringify(s_arr));
+  localStorage.setItem("logs", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
   window.location.href = "index.html";
@@ -155,7 +155,7 @@ function loginacc(e) {
     e.prevent();
   }
 
-  var userData = JSON.parse(localStorage.getItem("users"));
+  var userData = JSON.parse(localStorage.getItem("logs"));
 
   var havedata = false;
   for (let i = 0; i < userData.length; i++) {
@@ -199,7 +199,7 @@ function checkData(e) {
     password2: password2,
   };
 
-  var userData2 = JSON.parse(localStorage.getItem("users"));
+  var userData2 = JSON.parse(localStorage.getItem("logs"));
 
   var havedata2 = false;
   for (let i = 0; i < userData2.length; i++) {
@@ -219,6 +219,7 @@ function checkData(e) {
     localStorage.setItem("logindone", JSON.stringify("no"));
   }
 }
+var user_name;
 function changeNav() {
   let pop_up22 = document.querySelector("#pop2");
   pop_up22.style.display = "none";
@@ -232,8 +233,7 @@ function changeNav() {
   let mob_num2 = form.mob_num2.value;
 
   let password2 = form.password2.value;
-  let userData_name = JSON.parse(localStorage.getItem("users"));
-  let user_name;
+  let userData_name = JSON.parse(localStorage.getItem("logs"));
 
   let havData = false;
   for (let i = 0; i < userData_name.length; i++) {
@@ -273,7 +273,7 @@ function changeNav() {
   <div id="dropdown_5">
   <div class="arrowmiddle55"></div>
        <div class="drop_d_links first_us_box">
-          <button>MY ACCOUNT</button>
+          <button onclick="add()">MY ACCOUNT</button>
        <div>
        <div class="drop_d_links">
           <button>MY BOOKINGS</button>
@@ -302,6 +302,9 @@ function show_dr_box() {
 }
 localStorage.setItem("logindone", JSON.stringify("no"));
 
+function add() {
+  window.location.href = "userProfile.html"
+}
 function logoutFunc() {
   window.location.href = "index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
@@ -478,3 +481,14 @@ function initial(id) {
 // mouse.addEventListener('mouseout', initial);
 
 //click signup
+function showlogin() {
+  var logarr = JSON.parse(localStorage.getItem("logs")); 
+  var log = document.getElementById("login_text");
+  if (logarr.name == undefined) {
+    log.innerHTML = "LOGIN"
+  }
+  else {
+    log.innerHTML = logarr.name;
+  }
+}
+showlogin();

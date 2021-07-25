@@ -477,7 +477,6 @@ function paymentdone(e) {
     alert("Please Add Valid Inputs");
     e.prevent();
   } else {
-    alert("Your Payment Done Successfully!");
-    window.location.href = "../Landingpage/index.html";
+    window.location.href = "greeting.html";
   }
 }

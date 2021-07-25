@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="userProfile.css">
+  <!-- <script src="index.js"></script> -->
 </head>
 
 <body>
@@ -73,7 +74,7 @@
 
           </li>
           <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
-          <li class="item" id="login_btn"><a href="#" id="login-text">LOGIN</a></li>
+          <li class="item" id="login_btn"><a href="#" id="login_text1">LOGIN</a></li>
 
         </ul>
       </nav>
@@ -144,7 +145,7 @@
     </div>
 </body>
 <script>
-    let check = JSON.parse(localStorage.getItem('users'));
+    let check = JSON.parse(localStorage.getItem('username'));
     if (check == undefined) {
         var login = document.getElementById('login-text');
         login.innerHTML = check.name;
@@ -190,7 +191,7 @@
         let userData = data[check.number];
         userData.img = imgSrc;
 
-        localStorage.setItem('users', JSON.stringify(userData));
+        localStorage.setItem('username', JSON.stringify(userData));
 
         data[check.number] = userData;
         localStorage.setItem('cultFitUsers', JSON.stringify(data));
@@ -253,7 +254,7 @@
             userData.email = email.value;
         }
 
-        localStorage.setItem('users', JSON.stringify(userData));
+        localStorage.setItem('username', JSON.stringify(userData));
 
         data[check.number] = userData;
 
@@ -267,9 +268,22 @@
         let userData = {
             name: "Login"
         }
-        localStorage.setItem('users', JSON.stringify(userData));
+        localStorage.setItem('username', JSON.stringify(userData));
 
         window.location.href = "index.html";
     }
+
+      /* function showlogin() {
+        var logarr = JSON.parse(localStorage.getItem("logs")); 
+        console.log(logarr);
+        var log = document.getElementById("login_text1");
+        if (logarr.name == undefined) {
+          log.innerHTML = "LOGIN"
+        }
+        else {
+          log.innerHTML = logarr.name;
+        }
+      }
+      showlogin(); */
 </script>
-<script src="index.js"></script>
+
