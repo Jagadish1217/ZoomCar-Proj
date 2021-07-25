@@ -253,13 +253,14 @@
              </div>
         </div>
         <hr>
-        <div class="ch_head"><h2>Promotional Code</h2></div>
+        <div class="ch_head"><h2>Promotional Code</h2> <input type="text" onkeypress="ValidatePromoCode(event)" id="promocode" placeholder="Have a Coupon Code?">
+        <p id="discountAmount"></p></div>
         <hr class="vw_hr_top">
-        <div id="viewoff"><a href="#">View Offers</a></div>
+        <div id="viewoff"><a href="../OffersPage/Offers.html">View Offers</a></div>
         <hr class="vw_hr_btm">
         <div id="ref_amt">
             <div id="ref_lef">
-                <h3>Refundable Deposite(?)</h3>
+                <h3>Refundable Deposit(?)</h3>
                 <input type="checkbox"><label>Pay Now(?)</label>
             </div>
             <div id="ref_ri"> <p>₹</p><p id="ref_amount">1499</p></div>
@@ -303,8 +304,8 @@
                 <p class="fkml">Excess Km(?)</p>
             </div>
             <div id="fr_ek_rig">
-                <p class="fkmr">630.0 Km</p>
-                <p class="fkmr">₹ 15/km</p>
+                <p id="freekmsvalue" class="fkmr">630.0 Km</p>
+                <p id="excesskmsvalue" class="fkmr">₹ 15/km</p>
             </div>
         </div>
         <hr>

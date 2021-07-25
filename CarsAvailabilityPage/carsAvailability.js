@@ -4,13 +4,13 @@ document.title = `Book A Car In ${localStorage.getItem(
 )} | Rent Cars @ Most Affordable Rates - Zoomcar`;
 // Details coming from local storage - stored from selector page's details
 var pickupdetails = {
-  address: "Marine Dr, Chowpatty, Girgaon, Mumbai, Maharashtra 400007, India",
-  startDate: "23",
-  startMonth: "July",
-  startTime: "03:30",
-  endDate: "25",
-  endMonth: "July",
-  endTime: "00:10",
+  address: localStorage.getItem("address"),
+  startDate: localStorage.getItem("startDate"),
+  startMonth: localStorage.getItem("startMonth"),
+  startTime: localStorage.getItem("startTime"),
+  endDate: localStorage.getItem("endDate"),
+  endMonth: localStorage.getItem("endMonth"),
+  endTime: localStorage.getItem("endTime"),
 };
 
 var carslist = [
