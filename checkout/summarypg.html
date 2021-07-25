@@ -1,325 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
-    <title>Zoomcar</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
+  <title>Zoomcar</title>
   <link rel="stylesheet" href="summarypg.css">
   <link rel="icon" href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
     type="image/x-icon">
 </head>
+
 <body>
-    <div id="offers">
-      <nav id="navbar">
-        <div id="logo">
-          <a href="../Landingpage/index.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
-        </div>
-        <ul id="nav_ul">
-          <li class="item hov">
-            <a href="#">SUBSCRIPTION</a>
-            <div class="details" id="sub_det_item">
-              <div class="arrowmiddle"></div>
-              <div class="subscr_detail">
-                <span class="subscr-logo1"></span>
-                <p>Hassle-free way of getting your personal car for flexible long term duration. You also have an option
-                  to share your car with other Zoomcar customers &amp; save up to 70% of the monthly subscription fee.
+  <div id="offers">
+    <nav id="navbar">
+      <div id="logo">
+        <a href="../Landingpage/index.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg"
+            alt="Zoom_Car" /></a>
+      </div>
+      <ul id="nav_ul">
+        <li class="item hov">
+          <a href="#">SUBSCRIPTION</a>
+          <div class="details" id="sub_det_item">
+            <div class="arrowmiddle"></div>
+            <div class="subscr_detail">
+              <span class="subscr-logo1"></span>
+              <p>Hassle-free way of getting your personal car for flexible long term duration. You also have an option
+                to share your car with other Zoomcar customers &amp; save up to 70% of the monthly subscription fee.
+              </p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item"><a href="#">AMIGO</a>
+          <div class="details2">
+            <div class="arrowmiddle2"></div>
+            <div class="amigo_detail">
+              <span class="amigo-logo2"></span>
+              <p>A unique Community Vehicle Pooling program that allows you to share your car with your community and
+                friends while the car not in use and earn money.</p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item"><a href="#">ZMS</a>
+          <div class="details3">
+            <div class="arrowmiddle3"></div>
+            <div class="zms_detail">
+              <span class="zms-logo3"></span>
+              <p>Connected technology offerings and shared mobility solutions for businesses worldwide.</p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item mob_wid"><a href="#">MOBILE APP
+            <div class="mob_det">
+              <div class="arrowmiddle4"></div>
+              <div class="details4">
+                <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                  class="mob_anc">
+                  <div class="mob1">
+                    <img src="../img/g_play_logo2.png" alt="">Google Play
+                  </div>
+                </a>
+                <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                  class="mob_anc">
+                  <div class="mob2"><img src="../img/apple_log.png" alt="">Apple Store</div>
+                </a>
+              </div>
+            </div>
+
+        </li>
+        <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+        <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
+
+      </ul>
+    </nav>
+
+
+
+
+    <!-- SIGNUP POPUP -->
+    <div id="pop1">
+      <div class="log_in_cont">
+        <div class="close1">+</div>
+        <!-- div slider started  -->
+        <div class="slider">
+          <div class="slides">
+
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+
+            <div class="slide first">
+              <div id="zoomPromo1">
+                <div class="zc_1">
+                  <img src="../img/promo-3.fuel.png" alt="" />
+                </div>
+                <h2>Free Fuel</h2>
+                <p>
+                  The fuel is on us for your complete trip. In case you re-fuel a
+                  zoomcar, we will re-fill your pockets and that’s a promise.
                 </p>
-                <button class="subscr_btn">KNOW MORE</button>
               </div>
             </div>
-          </li>
-          <li class="item"><a href="#">AMIGO</a>
-            <div class="details2">
-              <div class="arrowmiddle2"></div>
-              <div class="amigo_detail">
-                <span class="amigo-logo2"></span>
-                <p>A unique Community Vehicle Pooling program that allows you to share your car with your community and
-                  friends while the car not in use and earn money.</p>
-                <button class="subscr_btn">KNOW MORE</button>
+
+            <div class="slide">
+              <div id="zoomPromo2">
+                <div class="zc_1">
+                  <img src="../img/super_log-removebg-preview.png" alt="" />
+                </div>
+                <h2>Supermiler Club</h2>
+                <p>
+                  Premium club which rewards you everytime you drive with us.
+                </p>
               </div>
             </div>
-          </li>
-          <li class="item"><a href="#">ZMS</a>
-            <div class="details3">
-              <div class="arrowmiddle3"></div>
-              <div class="zms_detail">
-                <span class="zms-logo3"></span>
-                <p>Connected technology offerings and shared mobility solutions for businesses worldwide.</p>
-                <button class="subscr_btn">KNOW MORE</button>
+            <div class="slide">
+              <div id="zoomPromo3">
+                <div class="zc_1">
+                  <img src="../img/pro1.png" alt="" />
+                </div>
+                <h2>Refer &amp; Earn</h2>
+                <p>
+                  Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                </p>
               </div>
             </div>
-          </li>
-          <li class="item mob_wid"><a href="#">MOBILE APP
-              <div class="mob_det">
-                <div class="arrowmiddle4"></div>
-                <div class="details4">
-                  <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
-                    class="mob_anc">
-                    <div class="mob1">
-                      <img src="../img/g_play_logo2.png" alt="">Google Play
-                    </div>
-                  </a>
-                  <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
-                    class="mob_anc">
-                    <div class="mob2"><img src="../img/apple_log.png" alt="">Apple Store</div>
-                  </a>
-                </div>
-              </div>
-
-          </li>
-          <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
-          <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
-
-        </ul>
-      </nav>
-    
-   
-    
-
-                                               <!-- SIGNUP POPUP -->
-      <div id="pop1">
-        <div class="log_in_cont">
-          <div class="close1">+</div>
-          <!-- div slider started  -->
-          <div class="slider">
-            <div class="slides">
-
-              <input type="radio" name="radio-btn" id="radio1">
-              <input type="radio" name="radio-btn" id="radio2">
-              <input type="radio" name="radio-btn" id="radio3">
 
 
-              <div class="slide first">
-                <div id="zoomPromo1">
-                  <div class="zc_1">
-                    <img src="../img/promo-3.fuel.png" alt="" />
-                  </div>
-                  <h2>Free Fuel</h2>
-                  <p>
-                    The fuel is on us for your complete trip. In case you re-fuel a
-                    zoomcar, we will re-fill your pockets and that’s a promise.
-                  </p>
-                </div>
-              </div>
+            <div class="navigation_auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+            </div>
 
-              <div class="slide">
-                <div id="zoomPromo2">
-                  <div class="zc_1">
-                    <img src="../img/super_log-removebg-preview.png" alt="" />
-                  </div>
-                  <h2>Supermiler Club</h2>
-                  <p>
-                    Premium club which rewards you everytime you drive with us.
-                  </p>
-                </div>
-              </div>
-              <div class="slide">
-                <div id="zoomPromo3">
-                  <div class="zc_1">
-                    <img src="../img/pro1.png" alt="" />
-                  </div>
-                  <h2>Refer &amp; Earn</h2>
-                  <p>
-                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
-                  </p>
-                </div>
-              </div>
+          </div>
+        </div>
 
-
-              <div class="navigation_auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-              </div>
-
+        <div class="log_right">
+          <div class="log_r_top">
+            <div class="log_r_top_logo">
+              <img src="../img/zoom-logo-color.png" alt="">
+            </div>
+            <div class="log_r_top_cont">
+              <label for="">Continue with</label>
             </div>
           </div>
-
-          <div class="log_right">
-            <div class="log_r_top">
-              <div class="log_r_top_logo">
-                <img src="../img/zoom-logo-color.png" alt="">
-              </div>
-              <div class="log_r_top_cont">
-                <label for="">Continue with</label>
-              </div>
+          <div class="log_r_bot">
+            <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+            <div class="log_r_bot_btn">
+              <button class="btn_log_sub" onclick="signinacc(event)"></button>
             </div>
-            <div class="log_r_bot">
-              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
-              <div class="log_r_bot_btn">
-                <button class="btn_log_sub"  onclick="signinacc(event)"></button>
-              </div>
 
-            </div>
           </div>
         </div>
       </div>
+    </div>
 
-                                                  <!-- LOGIN POPUP -->
-      <div id="pop2">
-        <div class="log_in_cont2">
-          <div class="close12">+</div>
-          <!-- div slider started  -->
-          <div class="slider22">
-            <div class="slides22">
+    <!-- LOGIN POPUP -->
+    <div id="pop2">
+      <div class="log_in_cont2">
+        <div class="close12">+</div>
+        <!-- div slider started  -->
+        <div class="slider22">
+          <div class="slides22">
 
-              <input type="radio" name="radio-btn2" id="radio12">
-              <input type="radio" name="radio-btn2" id="radio22">
-              <input type="radio" name="radio-btn2" id="radio32">
+            <input type="radio" name="radio-btn2" id="radio12">
+            <input type="radio" name="radio-btn2" id="radio22">
+            <input type="radio" name="radio-btn2" id="radio32">
 
 
-              <div class="slide22 first2">
-                <div id="zoomPromo12">
-                  <div class="zc_12">
-                    <img src="img/promo-3.fuel.png" alt="" />
-                  </div>
-                  <h2>Free Fuel</h2>
-                  <p>
-                    The fuel is on us for your complete trip. In case you re-fuel a
-                    zoomcar, we will re-fill your pockets and that’s a promise.
-                  </p>
+            <div class="slide22 first2">
+              <div id="zoomPromo12">
+                <div class="zc_12">
+                  <img src="img/promo-3.fuel.png" alt="" />
                 </div>
+                <h2>Free Fuel</h2>
+                <p>
+                  The fuel is on us for your complete trip. In case you re-fuel a
+                  zoomcar, we will re-fill your pockets and that’s a promise.
+                </p>
               </div>
+            </div>
 
-              <div class="slide22">
-                <div id="zoomPromo22">
-                  <div class="zc_12">
-                    <img src="../img/super_log-removebg-preview.png" alt="" />
-                  </div>
-                  <h2>Supermiler Club</h2>
-                  <p>
-                    Premium club which rewards you everytime you drive with us.
-                  </p>
+            <div class="slide22">
+              <div id="zoomPromo22">
+                <div class="zc_12">
+                  <img src="../img/super_log-removebg-preview.png" alt="" />
                 </div>
+                <h2>Supermiler Club</h2>
+                <p>
+                  Premium club which rewards you everytime you drive with us.
+                </p>
               </div>
-              <div class="slide22">
-                <div id="zoomPromo32">
-                  <div class="zc_12">
-                    <img src="../img/pro1.png" alt="" />
-                  </div>
-                  <h2>Refer &amp; Earn</h2>
-                  <p>
-                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
-                  </p>
+            </div>
+            <div class="slide22">
+              <div id="zoomPromo32">
+                <div class="zc_12">
+                  <img src="../img/pro1.png" alt="" />
                 </div>
+                <h2>Refer &amp; Earn</h2>
+                <p>
+                  Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                </p>
               </div>
+            </div>
 
 
-              <div class="navigation_auto2">
-                <div class="auto-btn12"></div>
-                <div class="auto-btn22"></div>
-                <div class="auto-btn32"></div>
-              </div>
+            <div class="navigation_auto2">
+              <div class="auto-btn12"></div>
+              <div class="auto-btn22"></div>
+              <div class="auto-btn32"></div>
+            </div>
 
+          </div>
+        </div>
+
+        <div class="log_right2">
+          <div class="log_r_top2">
+            <div class="log_r_top_logo2">
+              <img src="../img/zoom-logo-color.png" alt="">
+            </div>
+            <div class="log_r_top_cont2">
+              <label for="">Continue with your</label>
             </div>
           </div>
-
-          <div class="log_right2">
-            <div class="log_r_top2">
-              <div class="log_r_top_logo2">
-                <img src="../img/zoom-logo-color.png" alt="">
-              </div>
-              <div class="log_r_top_cont2">
-                <label for="">Continue with your</label>
-                </div>
+          <div class="log_r_bot2">
+            <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob2">
+            <div class="log_r_bot_btn2">
+              <button class="btn_log_sub2" onclick="loginacc(event)"></button>
             </div>
-            <div class="log_r_bot2">
-              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob2">
-              <div class="log_r_bot_btn2">
-                <button class="btn_log_sub2" onclick="loginacc(event)"></button>
-              </div>
 
-            </div>
           </div>
         </div>
       </div>
-</div>
-
-<div id="front_box">
+    </div>
+  </div>
+  <br>
+  <div id="count">
+    <div id="count_inner">
+      <div id="inner_padding">
+        <div id="blocks">
+          <div id="circle" class="green">1</div>
+          <div id="txt">Login/Signup</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line" class="green_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle" class="green">2</div>
+          <div id="txt">Checkout</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle">3</div>
+          <div id="txt">Payment</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle">4</div>
+          <div id="txt">Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="front_box">
 
     <div id="che_out">
       <div id="cont1">
-        <div class="ch_head"><h1>CHECKOUT</h1></div>
-        <hr>
-        <div id="book_fee">
-            <div id="book_fee_left">
-                <h3>Booking Fee</h3>
-                <p>Booking fee excludes fuel cost</p>
-            </div>
-            <div id="bookfee_amt">
-                <p>₹</p><p id="bkn_amount">9,259</p>
-             </div>
+        <div class="ch_head">
+          <h1>CHECKOUT</h1>
         </div>
         <hr>
-        <div class="ch_head"><h2>Promotional Code</h2> <input type="text" onkeypress="ValidatePromoCode(event)" id="promocode" placeholder="Have a Coupon Code?">
-        <p id="discountAmount"></p></div>
+        <div id="book_fee">
+          <div id="book_fee_left">
+            <h3>Booking Fee</h3>
+            <p>Booking fee excludes fuel cost</p>
+          </div>
+          <div id="bookfee_amt">
+            <p>₹</p>
+            <p id="bkn_amount">9,259</p>
+          </div>
+        </div>
+        <hr>
+        <div class="ch_head">
+          <h2>Promotional Code</h2> <input type="text" onkeypress="ValidatePromoCode(event)" id="promocode"
+            placeholder="Have a Coupon Code?">
+          <p id="discountAmount"></p>
+        </div>
         <hr class="vw_hr_top">
         <div id="viewoff"><a href="../OffersPage/Offers.html">View Offers</a></div>
         <hr class="vw_hr_btm">
         <div id="ref_amt">
-            <div id="ref_lef">
-                <h3>Refundable Deposit(?)</h3>
-                <input type="checkbox"><label>Pay Now(?)</label>
-            </div>
-            <div id="ref_ri"> <p>₹</p><p id="ref_amount">1499</p></div>
+          <div id="ref_lef">
+            <h3>Refundable Deposit(?)</h3>
+            <input type="checkbox"><label>Pay Now(?)</label>
+          </div>
+          <div id="ref_ri">
+            <p>₹</p>
+            <p id="ref_amount">1499</p>
+          </div>
         </div>
         <hr class="vw_hr_top">
         <div id="total">
-            <div id="total_pay_tit"><p>Total Payable Amount</p></div>
-            <div id="total_div"><p>Total Amount: ₹</p><p id="total_amount">6699</p> </div>
+          <div id="total_pay_tit">
+            <p>Total Payable Amount</p>
+          </div>
+          <div id="total_div">
+            <p>Total Amount: ₹</p>
+            <p id="total_amount">6699</p>
+          </div>
         </div>
       </div>
       <div id="b_check_div"><button class="checkout_btn" onclick="gotopaypg()">CHECKOUT</button></div>
     </div>
 
     <div id="sumry">
-        <div id="top_w_img">
-            <p class="heading_sumry">SUMMARY</p>
-            <img src="../img/sum_car_img.png" alt="" id="right_car">
-            <p id="car_name">KUV 100</p>
-            <p id="seating_cap">(5 Seater)</p>
+      <div id="top_w_img">
+        <p class="heading_sumry">SUMMARY</p>
+        <img src="../img/sum_car_img.png" alt="" id="right_car">
+        <p id="car_name">KUV 100</p>
+        <p id="seating_cap">(5 Seater)</p>
+      </div>
+      <hr>
+      <div id="pdt_ddt">
+        <div id="pdt">
+          <h2 id="pi_ti">12:30</h2>
+          <hr class="time_hr">
+          <p id="pi_dt">19JUN 21</p>
         </div>
-        <hr>
-        <div id="pdt_ddt">
-            <div id="pdt">
-                <h2 id="pi_ti">12:30</h2>
-                <hr class="time_hr">
-                <p id="pi_dt">19JUN 21</p>
-            </div>
-            <div class="to">TO</div>
-            <div id="ddt">
-                <h2 id="dr_ti">23:30</h2>
-                <hr class="time_hr">
-                <p id="dr_dt">24 JUN 21</p>
-            </div>
+        <div class="to">TO</div>
+        <div id="ddt">
+          <h2 id="dr_ti">23:30</h2>
+          <hr class="time_hr">
+          <p id="dr_dt">24 JUN 21</p>
         </div>
-        <div id="navi_box">
-            <img src="../img/navi_sum_pg.png" alt="">
+      </div>
+      <div id="navi_box">
+        <img src="../img/navi_sum_pg.png" alt="">
+      </div>
+      <div id="fr_ek_div">
+        <div id="fr_ek_lef">
+          <p class="fkml">Free Km(?)</p>
+          <p class="fkml">Excess Km(?)</p>
         </div>
-        <div id="fr_ek_div">
-            <div id="fr_ek_lef">
-                <p class="fkml">Free Km(?)</p>
-                <p class="fkml">Excess Km(?)</p>
-            </div>
-            <div id="fr_ek_rig">
-                <p id="freekmsvalue" class="fkmr">630.0 Km</p>
-                <p id="excesskmsvalue" class="fkmr">₹ 15/km</p>
-            </div>
+        <div id="fr_ek_rig">
+          <p id="freekmsvalue" class="fkmr">630.0 Km</p>
+          <p id="excesskmsvalue" class="fkmr">₹ 15/km</p>
         </div>
-        <hr>
-        <div id="fare_inc_div">
-            <img src="../img/fare_inc_sum.png" alt="">
-        </div>
+      </div>
+      <hr>
+      <div id="fare_inc_div">
+        <img src="../img/fare_inc_sum.png" alt="">
+      </div>
     </div>
-</div>
+  </div>
 
 
-     
-   
 
-<div id="last">
+
+
+  <div id="last">
     <div class="footer">
       <div class="Button">
         <button id="1" onmouseover="changeColor(1)" onmouseout="initial(1)"><a class="link" href=""><img
@@ -456,10 +504,11 @@
         <p>© Copyright 2017 Zoomcar India Private Ltd. All rights reserved.</p>
       </div>
     </div>
-</div>
+  </div>
 
-   
+
 </body>
+
 </html>
 <script src="summarypg.js">
 

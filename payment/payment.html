@@ -15,7 +15,8 @@
     <div id="payment">
         <nav id="navbar">
             <div id="logo">
-                <a href="../Landingpage/index.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+                <a href="../Landingpage/index.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg"
+                        alt="Zoom_Car" /></a>
             </div>
             <ul id="nav_ul">
                 <li class="item hov">
@@ -156,7 +157,7 @@
                             <a
                             href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
                             <div class="log_r_top_cont_gmail">Gmail</div>
-                            </a> -->                            
+                            </a> -->
                         </div>
                     </div>
                     <div class="log_r_bot">
@@ -248,8 +249,7 @@
                         </div>
                     </div>
                     <div class="log_r_bot2">
-                        <input type="text" placeholder="Enter your Mobile number"
-                            class="log_input_email_mob2">
+                        <input type="text" placeholder="Enter your Mobile number" class="log_input_email_mob2">
                         <div class="log_r_bot_btn2">
                             <button class="btn_log_sub2" onclick="loginacc(event)"></button>
                         </div>
@@ -259,13 +259,48 @@
             </div>
         </div>
     </div>
+    <br>
+    <div id="count">
+        <div id="count_inner">
+            <div id="inner_padding">
+                <div id="blocks">
+                    <div id="circle" class="green">1</div>
+                    <div id="txt">Login/Signup</div>
+                </div>
+                <div id="blocks">
+                    <div id="horizontal_line" class="green_line"></div>
+                </div>
+                <div id="blocks">
+                    <div id="circle" class="green">2</div>
+                    <div id="txt">Checkout</div>
+                </div>
+                <div id="blocks">
+                    <div id="horizontal_line" class="green_line"></div>
+                </div>
+                <div id="blocks">
+                    <div id="circle" class="green">3</div>
+                    <div id="txt">Payment</div>
+                </div>
+                <div id="blocks">
+                    <div id="horizontal_line"></div>
+                </div>
+                <div id="blocks">
+                    <div id="circle">4</div>
+                    <div id="txt">Profile</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="front_box">
 
         <div id="paymentApp">
             <div class="payableAmount">
-                <h2 >Total Payable Amount</h2>
-                <div class="amount"><p>₹ </p><p id="pay_amt">4242</p></div>
+                <h2>Total Payable Amount</h2>
+                <div class="amount">
+                    <p>₹ </p>
+                    <p id="pay_amt">4242</p>
+                </div>
             </div>
             <div>
                 <div class="paymentMethods">
@@ -288,24 +323,29 @@
                             <div class="methods">
                                 <div class="cardPayment">
                                     <div class="card">
-                                        
+
                                         <div class="cardNumber"><input type="text" maxlength="16"
-                                                placeholder="ENTER CARD NUMBER" appearance= "textfield"; id="cardNum" oninput="checkchange()">
-                                           
+                                                placeholder="ENTER CARD NUMBER" appearance="textfield" ; id="cardNum"
+                                                oninput="checkchange()">
+
                                         </div>
-                                        <div class="cardInfo"><input  maxlength="2" placeholder="MM" type="text" id="m_m" oninput="checkchange()"> 
-                                             <input placeholder="YYYY" maxlength="4"
-                                                type="text"class="year" id="exyear" oninput="checkchange()"> 
-                                           
+                                        <div class="cardInfo"><input maxlength="2" placeholder="MM" type="text" id="m_m"
+                                                oninput="checkchange()">
+                                            <input placeholder="YYYY" maxlength="4" type="text" class="year" id="exyear"
+                                                oninput="checkchange()">
+
                                         </div>
                                         <div class="cardInfo"> <input maxlength="3" placeholder="CVV" type="password"
                                                 class="cvv" id="cvV" oninput="checkchange()">
-                                        
+
                                         </div>
-                                        
+
                                     </div>
                                     <button class="paymentButton" id="pay_btn_main" onclick="paymentdone(event)">
-                                        <div id="pay_div_btn"> <p>Pay ₹</p><p id="pay_amt2">4242</p></div>
+                                        <div id="pay_div_btn">
+                                            <p>Pay ₹</p>
+                                            <p id="pay_amt2">4242</p>
+                                        </div>
                                     </button>
                                 </div>
                             </div>

@@ -746,7 +746,7 @@ body {
   width: 100vw;
   height: 700px;
   /* background-color: rgba(0, 0, 0, 0.7);  */
-  padding: 140px 220px;
+  padding: 0px 220px;
   display: flex;
 }
 #che_out {
@@ -927,7 +927,7 @@ body {
   text-align: right;
 }
 #last {
-  margin-top: 10vh;
+  margin-top: 30vh;
 }
 #last .footer {
   background-color: rgb(51, 65, 79);
@@ -1089,3 +1089,70 @@ body {
   text-align: right;
   margin-left: 4%;
 }
+
+/* Creating Count Procedure */
+#count {
+            margin-top: 60px;
+            height: 100px;
+        }
+
+        #count_inner {
+            margin: 12px auto;
+            height: 55px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        #inner_padding {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            height: 54px;
+        }
+
+        #blocks {
+            display: inline-block;
+            margin: 4px -16px 0 0;
+            width: 78px;
+            height: 50px;
+        }
+
+        #horizontal_line {
+            width: 85px;
+            border-top: 1px #ccc solid;
+            position: relative;
+            top: 25px;
+            left: -5px;
+        }
+
+        div {
+            display: block;
+        }
+
+        #circle {
+            background: #70757d;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            /* margin-top: 5px; */
+            display: inline-block;
+            font-size: 12px;
+        }
+
+        .green {
+            background: rgb(99, 161, 62) !important
+        }
+
+        .green_line {
+            border-top: 1px rgb(99, 161, 62) solid !important;
+        }
+
+        #txt {
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+            color: #666;
+        }
