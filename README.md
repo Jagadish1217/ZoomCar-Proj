@@ -47,7 +47,3 @@ This project is a complete clone UI of zoomcar website with the functionalities 
   <li>added greeting functionality</li>
 </ul>
 
-## Demo image of landing page
-
-<img src="screenshot(264).png">
-  
