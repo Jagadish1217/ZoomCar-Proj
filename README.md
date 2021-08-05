@@ -25,3 +25,29 @@ This project is a complete clone UI of zoomcar website with the functionalities 
   <li>Google Icons</li>
   <li>Flaticon</li>
 </ul>
+
+## Created Pages 
+<ul>
+  <li>Landing Page</li>
+  <li>Offers Page</li>
+  <li>Pick-up Page</li>
+  <li>Booking Page</li>
+  <li>Payment Page</li>
+</ul>
+
+## Functionalities Added
+<ul>
+  <li>Responsiveness in landing page</li>
+  <li>Added signup and Login functionalities</li>
+  <li>Added pickUp location and date/time functionalities</li>
+  <li>Car choosing functionalites</li>
+  <li>Sorting functionality acoording to Price</li>
+  <li>Functionality to book a car</li>
+  <li>Functionality to make a payment</li>
+  <li>added greeting functionality</li>
+</ul>
+
+## Demo image of landing page
+
+<img src="screenshot(264).png">
+  
