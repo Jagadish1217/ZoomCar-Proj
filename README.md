@@ -27,7 +27,7 @@ This project is a complete clone UI of zoomcar website with the functionalities 
 </ul>
 
 ## Created Pages 
-<ul style="font-size: 20px">
+<ul>
   <li>Landing Page</li>
   <li>Offers Page</li>
   <li>Pick-up Page</li>
