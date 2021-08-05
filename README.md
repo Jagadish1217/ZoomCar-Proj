@@ -47,3 +47,10 @@ This project is a complete clone UI of zoomcar website with the functionalities 
   <li>added greeting functionality</li>
 </ul>
 
+## Team Members 
+<ul>
+  <li>Sabareesh</li>
+  <li>Jagadish Hospet</li>
+  <li>Vikram</li>
+  <li>Utkarsh</li>
+</ul>
