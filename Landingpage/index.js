@@ -312,7 +312,7 @@ function show_dr_box() {
 localStorage.setItem("logindone", JSON.stringify("no"));
 
 function add() {
-  window.location.href = "userProfile.html"
+  window.location.href = "userProfile.html";
 }
 function logoutFunc() {
   window.location.href = "index.html";
@@ -493,12 +493,11 @@ function initial(id) {
 
 //click signup
 function showlogin() {
-  var logarr = JSON.parse(localStorage.getItem("logs")); 
+  var logarr = JSON.parse(localStorage.getItem("logs"));
   var log = document.getElementById("login_text");
   if (logarr.name == undefined) {
-    log.innerHTML = "LOGIN"
-  }
-  else {
+    log.innerHTML = "LOGIN";
+  } else {
     log.innerHTML = logarr.name;
   }
 }

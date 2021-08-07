@@ -1,58 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-        
-        #h1 {
-            width: 38%;
-            text-align: right;
-            margin: 60px auto 20px;
-            opacity: 0.5;
-            cursor: pointer;
-            color: rgb(129, 7, 78);
-            font-weight: 1000;
-            font-size: 35px;
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
 
-        .main-div {
-            border: 1px solid #0188cc;
-            width: 40vw;
-            height: auto;
-            border-radius: 23px;
-            margin: auto;
-        }
-        .hide {
-            display: none;
-        }
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  
+  <link rel="icon" href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+    type="image/x-icon">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Anton');
+
+      h1{
+        text-align:center;
+      }
+
+      .rainbow {
+        
+        /* Font options */
+        font-family: 'Pacifico', cursive;
+        text-shadow: 2px 2px 4px #000000;
+        font-size:40px;
+        
+        /* Chrome, Safari, Opera */
+        -webkit-animation: rainbow 5s infinite; 
+        
+        /* Internet Explorer */
+        -ms-animation: rainbow 5s infinite;
+        
+        /* Standar Syntax */
+        animation: rainbow 5s infinite; 
+      }
+
+      /* Chrome, Safari, Opera */
+      @-webkit-keyframes rainbow{
+        0%{color: orange;}	
+        10%{color: purple;}	
+        20%{color: red;}
+        30%{color: CadetBlue;}
+        40%{color: yellow;}
+        50%{color: coral;}
+        60%{color: green;}
+        70%{color: cyan;}
+        80%{color: DeepPink;}
+        90%{color: DodgerBlue;}
+        100%{color: orange;}
+      }
+      img {
+        /* margin-top: -10%; */
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
-  </head>
-   <h1 id="h1"></h1>
-    <div id="main-div" class="main-div"></div>
+</head>
+<body>
+  <br>
+  <h1 class="rainbow"></h1>
+  <div><img src="https://cdn.dribbble.com/users/2374064/screenshots/4732016/car-jump.gif" alt=""></div>
+  
+</body>
 </html>
+
 <script>
-  let store = JSON.parse(localStorage.getItem("store"));
-  store = [];
-  localStorage.setItem("store", JSON.stringify(store));
-  let field = document.getElementById("main-div");
-  let h1 = document.getElementById("h1");
-  let arr = ["Thankyou For your Payment", "Have a Great Ride"];
-  setTimeout(() => {
-    field.setAttribute("class", "hide");
-    h1.innerHTML = i;
-  }, 2000);
-  for (var a = 0; a < arr.length; a++) {
-    field.innerHTML = null;
-    let i = arr[a];
-    let stop = setInterval(function () {
-      h1.innerHTML = null;
-      h1.innerHTML = i;
-      window.location.href = "../Landingpage/index.html";
-      clearInterval(stop);
-    }, 2000);
-    h1.innerHTML = arr[0];
+  let head1 = document.querySelector("h1");
+  let flag=false;
+  head1.innerHTML = `Your Booking has been confirmed. <br> Thanks for choosing Zoomcar!`
+
+  function ChangeText() {
+    if (flag) {
+      head1.innerHTML = `Your Booking has been confirmed. <br> Thanks for choosing Zoomcar!`
+      flag=false;
+    }
+    else {
+      head1.innerHTML=`Have a Safe, Great Ride!`;
+      flag=true;
+    }
   }
+
+  function NavigatePage() {
+    clearInterval(texttimer);
+    window.location.href = "../Landingpage/index.html";
+  }
+
+  let texttimer = setInterval(ChangeText,2500);
+  let landingPageTimer = setInterval(NavigatePage,4900);
 </script>
