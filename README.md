@@ -54,8 +54,8 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
 
 ## Team Members 
 <ul>
-  <li>Sabareesh</li>
+  <li>Sabareesh Subramanian</li>
   <li>Jagadish Hospet</li>
-  <li>Vikram</li>
-  <li>Utkarsh</li>
+  <li>Ramendra Vikram Singh Parihar</li>
+  <li>Utkarsh Nagar</li>
 </ul>
