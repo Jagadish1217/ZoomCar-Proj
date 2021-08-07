@@ -1,5 +1,5 @@
 # ZoomCar-Proj
-This project is a complete clone UI of zoomcar website with the functionalities of booking a car. We used localStorage to save user data, booking data, payment data etc.
+This project is a complete clone UI of the Zoomcar website with the functionalities of booking a car. We used localStorage to save user data, booking data, payment data, etc.
 
 ## How to run the app?
 <ul>
@@ -29,8 +29,12 @@ This project is a complete clone UI of zoomcar website with the functionalities 
 ## Created Pages 
 <ul>
   <li>Landing Page</li>
+  <li>City Selection Page</li>
   <li>Offers Page</li>
-  <li>Pick-up Page</li>
+  <li>Pick-up Point Selection Page</li>
+  <li>Pick-up Date Selection Page</li>
+  <li>Drop Date Selection Page</li>
+  <li>Cars Availability, and Selection Page</li>
   <li>Booking Page</li>
   <li>Payment Page</li>
 </ul>
@@ -38,13 +42,14 @@ This project is a complete clone UI of zoomcar website with the functionalities 
 ## Functionalities Added
 <ul>
   <li>Responsiveness in landing page</li>
-  <li>Added signup and Login functionalities</li>
-  <li>Added pickUp location and date/time functionalities</li>
-  <li>Car choosing functionalites</li>
-  <li>Sorting functionality acoording to Price</li>
+  <li>Added Signup and Login functionalities</li>
+  <li>Added Pick-up location and Date/Time selection functionalities</li>
+  <li>Available cars viewing, and selection functionalites</li>
+  <li>Sorting functionality according to Price</li>
+  <li>Filter cars according to our choices</li>
   <li>Functionality to book a car</li>
   <li>Functionality to make a payment</li>
-  <li>added greeting functionality</li>
+  <li>Added booking success display functionality</li>
 </ul>
 
 ## Team Members 
