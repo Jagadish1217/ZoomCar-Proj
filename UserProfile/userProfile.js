@@ -116,7 +116,7 @@ function userLogOut() {
   };
   localStorage.setItem("username", JSON.stringify(userData));
 
-  window.location.href = "index.html";
+  window.location.href = "../Homepage-main.html";
 }
 
 /* function showlogin() {

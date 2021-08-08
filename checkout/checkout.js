@@ -142,7 +142,7 @@ function saveData(e) {
   localStorage.setItem("users", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "../index.html";
+  window.location.href = "../Homepage-main.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP

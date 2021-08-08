@@ -5,7 +5,7 @@ document.title = `Self Drive Car Rentals in ${localStorage.getItem(
 var cityValue = document.getElementById("cityvalue");
 cityValue.innerHTML = localStorage.getItem("SelectedCity");
 cityValue.addEventListener("click", function () {
-  window.location.href = "../CityPopupPage/CityPopup.html";
+  window.location.href = "./CityPopupPage/CityPopup.html";
 });
 //LogIn POP
 var logIn = document.getElementById("login_btn");
@@ -150,7 +150,7 @@ function saveData(e) {
   localStorage.setItem("logs", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "index.html";
+  window.location.href = "../Homepage-main.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP
@@ -312,10 +312,10 @@ function show_dr_box() {
 localStorage.setItem("logindone", JSON.stringify("no"));
 
 function add() {
-  window.location.href = "userProfile.html";
+  window.location.href = "../UserProfile/userProfile.html";
 }
 function logoutFunc() {
-  window.location.href = "index.html";
+  window.location.href = "../Homepage-main.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
@@ -384,7 +384,7 @@ function checkCity() {
   // console.log("TEST");
   var city = document.getElementById("city").value;
   // localStorage.setItem("city", JSON.stringify(city));
-  window.location.href = "../CityPopupPage/CityPopup.html";
+  window.location.href = "./CityPopupPage/CityPopup.html";
 }
 
 //                                      MIDDLE PAGE JS                             //

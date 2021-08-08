@@ -14,7 +14,7 @@ function ChangeText() {
 
 function NavigatePage() {
   clearInterval(texttimer);
-  window.location.href = "../Landingpage/index.html";
+  window.location.href = "../Homepage-main.html";
 }
 
 let texttimer = setInterval(ChangeText, 2500);

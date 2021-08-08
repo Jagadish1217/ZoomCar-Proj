@@ -7,7 +7,7 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
   <ul>
     <li>https://github.com/Jagadish1217/ZoomCar-Proj.git</li>
     <li>cd ZoomCar-Proj</li>
-    <li>Open Landingpage folder and execute the index.html file inside it</li>
+    <li>Execute the Homepage-main.html file in the browser, and enjoy the process of booking a car using our website</li>
   </ul>
 </ul>
 

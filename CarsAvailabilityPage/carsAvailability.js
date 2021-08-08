@@ -130,7 +130,7 @@ function FillPickupLocationDetails() {
 
   // To redirect the user to select location page in case he/she wishes to change pickup point
   pickuppointaddress.addEventListener("click", function () {
-    window.location.href = "../Process/PickUpLocation.html";
+    window.location.href = "../PickuplocationSelection/PickUpLocation.html";
   });
 }
 
@@ -201,7 +201,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startdatedisplay.addEventListener("click", function () {
-    window.location.href = "../Process/PickUpTimeSelection.html";
+    window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
 
   enddatedisplay.addEventListener("mouseover", function () {
@@ -209,7 +209,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   enddatedisplay.addEventListener("click", function () {
-    window.location.href = "../Process/DropTimeSelection.html";
+    window.location.href = "../DropTimeSelection/DropTimeSelection.html";
   });
 
   startmonthdisplay.addEventListener("mouseover", function () {
@@ -217,14 +217,14 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startmonthdisplay.addEventListener("click", function () {
-    window.location.href = "../Process/PickUpTimeSelection.html";
+    window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
   endmonthdisplay.addEventListener("mouseover", function () {
     endmonthdisplay.style.cursor = "pointer";
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endmonthdisplay.addEventListener("click", function () {
-    window.location.href = "../Process/DropTimeSelection.html";
+    window.location.href = "../DropTimeSelection/DropTimeSelection.html";
   });
 
   starttimedisplay.addEventListener("mouseover", function () {
@@ -232,7 +232,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   starttimedisplay.addEventListener("click", function () {
-    window.location.href = "../Process/PickUpTimeSelection.html";
+    window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
 
   endtimedisplay.addEventListener("mouseover", function () {
@@ -240,7 +240,7 @@ function FillPickupDropOffDateTimeDetails() {
   });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endtimedisplay.addEventListener("click", function () {
-    window.location.href = "../Process/DropTimeSelection.html";
+    window.location.href = "../DropTimeSelection/DropTimeSelection.html";
   });
 }
 

@@ -7,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zoom Car</title>
   <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="userProfile.css">
-  <!-- <script src="index.js"></script> -->
+  <link rel="stylesheet" href="../Landingpage/index.css">
+  <link rel="stylesheet" href="userAccount.css">
 </head>
 
 <body>
@@ -17,10 +16,10 @@
     <div id="home">
       <nav id="navbar">
         <div id="logo">
-          <a href="../Landingpage/index.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+          <a href="../Homepage-main.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
         </div>
         <ul id="nav_ul">
-          <li class="item"><a href="./offers/offers.html">OFFERS</a></li>
+          <li class="item"><a href="../OffersPage/Offers.html">OFFERS</a></li>
           <li class="item hov">
             <a href="#">SUBSCRIPTION</a>
             <div class="details" id="sub_det_item">
@@ -74,14 +73,12 @@
 
           </li>
           <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
-          <li class="item" id="login_btn"><a href="#" id="login_text1">LOGIN</a></li>
+          <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
 
         </ul>
       </nav>
     </div>
     </div>
-    </body>
-
     <div class="main-data">
             <div id="left-data">
                 <div id="user">
@@ -91,7 +88,7 @@
                 </div>
                 <div id="user-edits">
                     <ul>
-                        <li onclick="window.location.href='userProfile.html'">
+                        <li onclick="window.location.href='../UserProfile/userProfile.html'">
                             <div>Profile</div>
                             <div><i class="fas fa-user"></i></div>
                         </li>
@@ -112,31 +109,21 @@
             </div>
 
             <!------- User profile ------>
-            <div id="right-data-userProfile">
-                <div id="profile-img-div"><img src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"
-                        alt="" width="150px" id="profile-picture1"></div>
-                <div id="changeProfilePicture" onclick="updateProfilePicture()">Click to change profile picture</div>
-                <p>PROFILE</p>
-
+            <div id="right-data">
+                <p>Change Password</p>
                 <div class="grid user-profile-form">
-                    <div id="user-input-name">Name<br />
-                        <input type="text" placeholder="Enter your name" id="user-name" readonly>
+                    <div id="user-input-name">Old Password<br/>
+                        <input type="text" placeholder="Enter your Old password" id="old-password">
                     </div>
-                    <div id="user-input-phone">Phone Number<br />
-                        <input type="text" placeholder="Enter your mobile number" id="user-phone" readonly>
+                    <div id="user-input-name">New Password<br/>
+                        <input type="text" placeholder="Enter your Old password" id="new-password">
                     </div>
-                    <div id="user-input-Gender" readonly>Gender<br />
-                        <input type="text" id="user-gender">
-                        <i class="fas fa-male" onclick="changeGender('Male')" id="male-icon"></i>
-                        <i class="fas fa-female" onclick="changeGender('Female')" id="female-icon"></i>
-                        <i class="fas fa-transgender" id="transgender-icon" onclick="changeGender('Other')"></i>
-                    </div>
-                    <div id="user-input-email">Email<br />
-                        <input type="email" placeholder="Enter your email id" id="user-email">
-                    </div>
+                    <div id="user-input-name">Confirm new Password<br/>
+                        <input type="password" placeholder="Enter your Old password" id="confirm-password">
+                    </div><br>
                     <div id="user-profile-button">
-                        <button id="discard" onclick="window.location.href = 'userProfile.html'">Discard</button>
-                        <button id="save" onclick="editUser()">Save</button>
+                        <button id="discard" onclick="window.location.href = 'userAccount.html'">Discard</button>
+                        <button id="save" onclick="changePassword()">Save</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +131,7 @@
         </div>
     </div>
 </body>
-<script src="./userProfile.js">
+<script src="./userAccount.js">
     
 </script>
 
