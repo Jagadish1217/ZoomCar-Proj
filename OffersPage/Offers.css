@@ -11,6 +11,7 @@
   /* height: 20px; */
   /* border: 2px solid red; */
   border-bottom: 1px solid grey;
+  margin-top: 5%;
 }
 #offerstitle {
   font-weight: 500;
@@ -43,4 +44,13 @@
 }
 #promocodedetaisdiv > div > span {
   margin: 6px 2px;
+}
+.left-float {
+  float: left;
+}
+.right-float {
+  float: right;
+}
+.bold-text-font {
+  font-weight: bold;
 }

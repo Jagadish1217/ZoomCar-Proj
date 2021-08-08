@@ -16,6 +16,7 @@ body {
   background-color: #efefef;
   float: left;
   /* border: 2px solid violet; */
+  margin-top: 5%;
 }
 #cardetaildiv {
   background-color: #f7f7f7;
@@ -24,6 +25,7 @@ body {
   height: 100%;
   float: left;
   /* border: 2px solid green; */
+  margin-top: 5%;
 }
 #pickuplocationdiv {
   width: 100%;
@@ -508,4 +510,7 @@ input:checked + .toggle-slider:before {
 input,
 button {
   outline: none;
+}
+.left-float {
+  float: left;
 }
