@@ -1159,3 +1159,7 @@ div {
   font-family: "Open Sans", sans-serif;
   color: #666;
 }
+input,
+button {
+  outline: none;
+}

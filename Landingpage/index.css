@@ -616,7 +616,7 @@ body {
 #Promo3 .pr1 img {
   width: 100px;
   height: 100px;
-}         
+}
 .log_in_cont .log_right {
   width: 450px;
   text-align: center;
@@ -653,7 +653,7 @@ body {
 .log_r_top_cont a {
   text-decoration: none;
   color: white;
-} 
+}
 .log_r_bot {
   height: 190px;
 }
@@ -838,7 +838,7 @@ body {
 .log_r_top_cont2 a {
   text-decoration: none;
   color: white;
-} 
+}
 .log_r_bot2 {
   height: 190px;
 }
@@ -1578,4 +1578,8 @@ body {
     width: 420px;
     margin: auto;
   }
+}
+input,
+button {
+  outline: none;
 }
