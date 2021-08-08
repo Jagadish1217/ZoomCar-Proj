@@ -505,3 +505,7 @@ input:checked + .toggle-slider:before {
   display: flex;
   flex-direction: row; 
 }*/
+input,
+button {
+  outline: none;
+}
