@@ -821,7 +821,7 @@ function showCars(cararray) {
           JSON.stringify(SelectedCarToBook)
         );
 
-        window.location.href = "../checkout/summarypg.html";
+        window.location.href = "../checkout/checkout.html";
       });
     }
   }

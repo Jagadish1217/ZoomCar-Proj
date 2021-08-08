@@ -1386,3 +1386,6 @@ input,
 button {
   outline: none;
 }
+.header > h2 {
+  color: #70ad4d;
+}

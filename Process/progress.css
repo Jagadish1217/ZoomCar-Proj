@@ -694,3 +694,6 @@ input,
 button {
   outline: none;
 }
+iframe {
+  border: 0;
+}

@@ -1583,3 +1583,33 @@ input,
 button {
   outline: none;
 }
+.font-size-12px {
+  font-size: 12px !important;
+}
+.margin-top-20px {
+  margin-top: 20px;
+}
+.height-40px {
+  height: 40px;
+}
+.apps > img {
+  width: 100%;
+}
+.zoomGo > h2 {
+  color: #eee;
+}
+.zoomGo > p {
+  color: #eee;
+  width: 50%;
+  font-size: 18px;
+}
+#playstorelink {
+  background-image: url(./img/google_playstore.png) !important;
+}
+#appstorelink {
+  background-image: url(./img/apple_store.png);
+}
+#ratings-image {
+  height: 25px;
+  margin: 22px auto;
+}
