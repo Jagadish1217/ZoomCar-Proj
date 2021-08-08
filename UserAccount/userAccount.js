@@ -19,7 +19,7 @@ function userLogOut() {
   };
   localStorage.setItem("cultUserName", JSON.stringify(userData));
 
-  window.location.href = "index.html";
+  window.location.href = "../Homepage-main.html";
 }
 
 function changePassword() {

@@ -84,7 +84,7 @@ function AddPopularCities() {
       //   p_name.style.fontSize = "16px";
       btn.style.border = "1px solid green";
       // modaldiv.style.display = "none";
-      window.location.href = "../Landingpage/index.html";
+      window.location.href = "../Homepage-main.html";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
       // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
@@ -127,7 +127,7 @@ function AddOtherCities() {
       // modaldiv.style.display = "none";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
-      window.location.href = "../Landingpage/index.html";
+      window.location.href = "../Homepage-main.html";
       // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
       //   "SelectedCity"
       // )}`;
