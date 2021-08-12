@@ -332,10 +332,10 @@ function show_dr_box() {
 localStorage.setItem("logindone", JSON.stringify("no"));
 
 function add() {
-  window.location.href = "../UserProfile/userProfile.html";
+  window.location.href = "./UserProfile/userProfile.html";
 }
 function logoutFunc() {
-  window.location.href = "../Homepage-main.html";
+  window.location.href = "./Homepage-main.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
